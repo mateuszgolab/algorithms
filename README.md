@@ -1,2 +1,3 @@
-# codility
-algorithmic problem solving from codility
+algorithmic problem solving from 
+- codility
+- hackerRank
