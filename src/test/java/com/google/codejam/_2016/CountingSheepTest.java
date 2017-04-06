@@ -26,24 +26,24 @@ public class CountingSheepTest {
     @Test
     public void init() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("codejam/counting_sheep/init.in") .getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2016/a/init.in") .getBytes());
         System.setIn(in);
 
         CountingSheep.main(null);
 
-        assertThat(outContent.toString(), is(InputLoader.getInput("codejam/counting_sheep/init.out")));
+        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2016/a/init.out")));
 
     }
 
     @Test
     public void large() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("codejam/counting_sheep/A-large-practice.in") .getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2016/a/A-large-practice.in") .getBytes());
         System.setIn(in);
 
         CountingSheep.main(null);
 
-        Assert.assertTrue(OutputLoader.output(outContent.toString(), "codejam/counting_sheep/A-large-practice.out"));
+        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2016/a/A-large-practice.out"));
 
 
     }
