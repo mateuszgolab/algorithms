@@ -36,14 +36,53 @@ public class CTest {
     }
 
     @Test
-    public void small() {
+    public void init2() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/C-small-practice.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/init2.in").getBytes());
         System.setIn(in);
 
         C.main(null);
 
-        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/q/c/C-small-practice.out"));
+        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2017/q/c/init2.out")));
+
+    }
+
+    @Test
+    public void small1() {
+
+        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/C-small-1-attempt2.in").getBytes());
+        System.setIn(in);
+
+        C.main(null);
+
+        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2017/q/c/C-small-1-attempt2.out")));
+
+
+    }
+
+    @Test
+    public void small2done() {
+
+        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/C-small-2-attempt0.in").getBytes());
+        System.setIn(in);
+
+        C.main(null);
+
+        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2017/q/c/C-small-2-attempt0.out")));
+
+
+    }
+
+
+    @Test
+    public void small2() {
+
+        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/C-small-2-attempt1.in").getBytes());
+        System.setIn(in);
+
+        C.main(null);
+
+        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/q/c/C-small-2-attempt1.out"));
 
 
     }
@@ -51,12 +90,12 @@ public class CTest {
     @Test
     public void large() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/C-large-practice.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/C-large.in").getBytes());
         System.setIn(in);
 
         C.main(null);
 
-        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/q/c/C-large-practice.out"));
+        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/q/c/C-large.out"));
 
 
     }

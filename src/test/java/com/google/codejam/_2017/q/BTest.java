@@ -38,12 +38,12 @@ public class BTest {
     @Test
     public void small() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/b/B-small-practice.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/b/B-small-attempt0.in").getBytes());
         System.setIn(in);
 
         B.main(null);
 
-        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/q/b/B-small-practice.out"));
+        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/q/b/B-small-attempt0.out"));
 
 
     }
@@ -51,12 +51,12 @@ public class BTest {
     @Test
     public void large() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/b/B-large-practice.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/b/B-large.in").getBytes());
         System.setIn(in);
 
         B.main(null);
 
-        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/q/b/B-large-practice.out"));
+        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/q/b/B-large.out"));
 
 
     }

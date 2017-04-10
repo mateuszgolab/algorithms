@@ -23,6 +23,20 @@ public class DTest {
         System.setOut(printStream);
     }
 
+
+    @Test
+    public void init0() {
+
+        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/d/init0.in").getBytes());
+        System.setIn(in);
+
+        D.main(null);
+
+        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2017/q/d/init0.out")));
+
+    }
+
+
     @Test
     public void init() {
 

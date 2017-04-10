@@ -9,7 +9,7 @@ public class OutputLoader {
 
         try {
 
-            String dir = OutputLoader.class.getResource("/").getFile().replace("/target/test-classes", "/src/main/resources");
+            String dir = OutputLoader.class.getResource("/").getFile().replace("/target/test-classes", "/src/test/resources");
             OutputStream os = new FileOutputStream(dir + fileName);
             PrintStream printStream = new PrintStream(os);
             printStream.println(value);
