@@ -1,6 +1,6 @@
 package com.google.codejam._2017.q;
 
-import com.utils.InputLoader;
+import com.utils.FileLoader;
 import com.utils.OutputLoader;
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,19 +26,19 @@ public class BTest {
     @Test
     public void init() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/b/init.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/b/init.in").getBytes());
         System.setIn(in);
 
         B.main(null);
 
-        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2017/q/b/init.out")));
+        assertThat(outContent.toString(), is(FileLoader.get("google/codejam/_2017/q/b/init.out")));
 
     }
 
     @Test
     public void small() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/b/B-small-attempt0.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/b/B-small-attempt0.in").getBytes());
         System.setIn(in);
 
         B.main(null);
@@ -51,7 +51,7 @@ public class BTest {
     @Test
     public void large() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/b/B-large.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/b/B-large.in").getBytes());
         System.setIn(in);
 
         B.main(null);

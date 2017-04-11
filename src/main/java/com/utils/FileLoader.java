@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 
-public class InputLoader {
+public class FileLoader {
 
-    public static String getInput(String fileName) {
+    public static String get(String fileName) {
 
-        InputStream stream = InputLoader.class.getClassLoader().getResourceAsStream(fileName);
+        InputStream stream = FileLoader.class.getClassLoader().getResourceAsStream(fileName);
         try {
             return IOUtils.toString(stream, Charset.forName("UTF-8"));
         } catch (IOException e) {

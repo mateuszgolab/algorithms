@@ -1,6 +1,7 @@
 package com.google.codejam._2016;
 
-import com.utils.InputLoader;
+import com.google.codejam._2016.q.CountingSheep;
+import com.utils.FileLoader;
 import com.utils.OutputLoader;
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,19 +27,19 @@ public class CountingSheepTest {
     @Test
     public void init() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2016/a/init.in") .getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2016/a/init.in") .getBytes());
         System.setIn(in);
 
         CountingSheep.main(null);
 
-        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2016/a/init.out")));
+        assertThat(outContent.toString(), is(FileLoader.get("google/codejam/_2016/a/init.out")));
 
     }
 
     @Test
     public void large() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2016/a/A-large-practice.in") .getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2016/a/A-large-practice.in") .getBytes());
         System.setIn(in);
 
         CountingSheep.main(null);

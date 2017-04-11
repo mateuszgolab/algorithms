@@ -1,6 +1,6 @@
 package com.google.codejam._2017.q;
 
-import com.utils.InputLoader;
+import com.utils.FileLoader;
 import com.utils.OutputLoader;
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,36 +26,36 @@ public class CTest {
     @Test
     public void init() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/init.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/c/init.in").getBytes());
         System.setIn(in);
 
         C.main(null);
 
-        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2017/q/c/init.out")));
+        assertThat(outContent.toString(), is(FileLoader.get("google/codejam/_2017/q/c/init.out")));
 
     }
 
     @Test
     public void init2() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/init2.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/c/init2.in").getBytes());
         System.setIn(in);
 
         C.main(null);
 
-        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2017/q/c/init2.out")));
+        assertThat(outContent.toString(), is(FileLoader.get("google/codejam/_2017/q/c/init2.out")));
 
     }
 
     @Test
     public void small1() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/C-small-1-attempt2.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/c/C-small-1-attempt2.in").getBytes());
         System.setIn(in);
 
         C.main(null);
 
-        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2017/q/c/C-small-1-attempt2.out")));
+        assertThat(outContent.toString(), is(FileLoader.get("google/codejam/_2017/q/c/C-small-1-attempt2.out")));
 
 
     }
@@ -63,12 +63,12 @@ public class CTest {
     @Test
     public void small2done() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/C-small-2-attempt0.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/c/C-small-2-attempt0.in").getBytes());
         System.setIn(in);
 
         C.main(null);
 
-        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2017/q/c/C-small-2-attempt0.out")));
+        assertThat(outContent.toString(), is(FileLoader.get("google/codejam/_2017/q/c/C-small-2-attempt0.out")));
 
 
     }
@@ -77,7 +77,7 @@ public class CTest {
     @Test
     public void small2() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/C-small-2-attempt1.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/c/C-small-2-attempt1.in").getBytes());
         System.setIn(in);
 
         C.main(null);
@@ -90,7 +90,7 @@ public class CTest {
     @Test
     public void large() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/c/C-large.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/c/C-large.in").getBytes());
         System.setIn(in);
 
         C.main(null);

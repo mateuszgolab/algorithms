@@ -1,6 +1,7 @@
 package com.google.codejam._2016;
 
-import com.utils.InputLoader;
+import com.google.codejam._2016.q.RevengeOfThePancakes;
+import com.utils.FileLoader;
 import com.utils.OutputLoader;
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,19 +27,19 @@ public class RevengeOfThePancakesTest {
     @Test
     public void init() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2016/b/init.in") .getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2016/b/init.in") .getBytes());
         System.setIn(in);
 
         RevengeOfThePancakes.main(null);
 
-        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2016/b/init.out")));
+        assertThat(outContent.toString(), is(FileLoader.get("google/codejam/_2016/b/init.out")));
 
     }
 
     @Test
     public void small() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2016/b/B-small-practice.in") .getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2016/b/B-small-practice.in") .getBytes());
         System.setIn(in);
 
         RevengeOfThePancakes.main(null);
@@ -51,7 +52,7 @@ public class RevengeOfThePancakesTest {
     @Test
     public void large() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2016/b/B-large-practice.in") .getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2016/b/B-large-practice.in") .getBytes());
         System.setIn(in);
 
         RevengeOfThePancakes.main(null);

@@ -1,6 +1,6 @@
 package com.google.codejam._2017.q;
 
-import com.utils.InputLoader;
+import com.utils.FileLoader;
 import com.utils.OutputLoader;
 import org.junit.Assert;
 import org.junit.Before;
@@ -27,12 +27,12 @@ public class DTest {
     @Test
     public void init0() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/d/init0.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/d/init0.in").getBytes());
         System.setIn(in);
 
         D.main(null);
 
-        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2017/q/d/init0.out")));
+        assertThat(outContent.toString(), is(FileLoader.get("google/codejam/_2017/q/d/init0.out")));
 
     }
 
@@ -40,19 +40,19 @@ public class DTest {
     @Test
     public void init() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/d/init.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/d/init.in").getBytes());
         System.setIn(in);
 
         D.main(null);
 
-        assertThat(outContent.toString(), is(InputLoader.getInput("google/codejam/_2017/q/d/init.out")));
+        assertThat(outContent.toString(), is(FileLoader.get("google/codejam/_2017/q/d/init.out")));
 
     }
 
     @Test
     public void small() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/d/D-small-practice.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/d/D-small-practice.in").getBytes());
         System.setIn(in);
 
         D.main(null);
@@ -65,7 +65,7 @@ public class DTest {
     @Test
     public void large() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(InputLoader.getInput("google/codejam/_2017/q/d/D-large-practice.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/q/d/D-large-practice.in").getBytes());
         System.setIn(in);
 
         D.main(null);
