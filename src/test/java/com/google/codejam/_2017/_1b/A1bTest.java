@@ -1,8 +1,6 @@
 package com.google.codejam._2017._1b;
 
 import com.utils.FileLoader;
-import com.utils.OutputLoader;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -35,32 +33,47 @@ public class A1bTest {
 
     }
 
-    @Test
-    public void small() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/_1b/A/A-small-attempt0.in").getBytes());
+    @Test
+    public void small2() {
+
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/_1b/A/A-small-attempt2.in").getBytes());
         System.setIn(in);
 
         A1b.main(null);
 
-        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/_1b/A/A-small-attempt0.out"));
+        assertThat(outContent.toString(), is(FileLoader.get("google/codejam/_2017/_1b/A/A-small-attempt2_fixed.out")));
 
 
     }
 
 
     @Test
-    public void large() {
+    public void small3() {
 
-        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/_1b/A/A-large.in").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/_1b/A/A-small-attempt3.in").getBytes());
         System.setIn(in);
 
         A1b.main(null);
 
-        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/_1b/A/A-large.out"));
+        assertThat(outContent.toString(), is(FileLoader.get("google/codejam/_2017/_1b/A/A-small-attempt3.out")));
 
 
     }
 
+//
+//    @Test
+//    public void large() {
+//
+//        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/_1b/A/A-large.in").getBytes());
+//        System.setIn(in);
+//
+//        A1b.main(null);
+//
+//        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/_1b/A/A-large.out"));
+//
+//
+//    }
+//
 
 }
