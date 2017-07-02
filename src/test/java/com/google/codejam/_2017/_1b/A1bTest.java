@@ -68,7 +68,7 @@ public class A1bTest {
 //        ByteArrayInputStream in = new ByteArrayInputStream(FileLoader.get("google/codejam/_2017/_1b/A/A-large.in").getBytes());
 //        System.setIn(in);
 //
-//        A1b.main(null);
+//        A1c.main(null);
 //
 //        Assert.assertTrue(OutputLoader.output(outContent.toString(), "google/codejam/_2017/_1b/A/A-large.out"));
 //
