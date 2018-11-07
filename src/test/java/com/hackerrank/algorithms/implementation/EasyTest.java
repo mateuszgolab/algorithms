@@ -114,4 +114,77 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void beautifulDaysAtTheMoviesTest() {
+
+        assertThat(beautifulDays(20, 23, 6), is(2));
+    }
+
+    @Test
+    public void testReverseInt() {
+
+        assertThat(reverseInt(210), is(12));
+        assertThat(reverseInt(123), is(321));
+
+    }
+
+    @Test
+    public void testViralAdvertising() {
+
+        assertThat(viralAdvertising(3), is(9));
+        assertThat(viralAdvertising(5), is(24));
+        assertThat(viralAdvertising(1), is(2));
+
+    }
+
+    @Test
+    public void testSaveThePrisoner() {
+
+        assertThat(saveThePrisoner(5,2,1), is(2));
+        assertThat(saveThePrisoner(5,2,2), is(3));
+        assertThat(saveThePrisoner(7,19,2), is(6));
+        assertThat(saveThePrisoner(3,7,3), is(3));
+        assertThat(saveThePrisoner(3,7,1), is(1));
+        assertThat(saveThePrisoner(7,3,7), is(2));
+        assertThat(saveThePrisoner(3,1,1), is(1));
+        assertThat(saveThePrisoner(3,3,1), is(3));
+
+    }
+
+    @Test
+    public void testCircularArrayRotation() {
+
+        assertThat(circularArrayRotation(new int[]{1,2,3}, 2, new int[]{0,1,2}), is(new int[]{2,3,1}));
+        assertThat(circularArrayRotation(new int[]{1,2,3}, 1, new int[]{0,1,2}), is(new int[]{3,1,2}));
+        assertThat(circularArrayRotation(new int[]{1,2,3}, 3, new int[]{0,1,2}), is(new int[]{1,2,3}));
+    }
+
+    @Test
+    public void testSequenceEquation() {
+
+        assertThat(permutationEquation(new int[]{2,3,1}), is(new int[]{2,3,1}));
+        assertThat(permutationEquation(new int[]{4,3,5,1,2}), is(new int[]{1,3,5,4,2}));
+
+    }
+
+
+    @Test
+    public void testJumpingOnTheCloudsRevisited() {
+
+        assertThat(jumpingOnClouds(new int[]{0,0,1,0,0,1,1,0}, 2), is(92));
+        assertThat(jumpingOnClouds(new int[]{0,0,1,0,0,1,1,0,1}, 3), is(95));
+
+    }
+
+
+    @Test
+    public void testFindDigits() {
+
+        assertThat(findDigits(12), is(2));
+        assertThat(findDigits(1012), is(3));
+        assertThat(findDigits(111), is(3));
+        assertThat(findDigits(12345678), is(4));
+
+    }
+
 }

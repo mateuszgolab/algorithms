@@ -1,8 +1,6 @@
 package com.hackerrank.algorithms.implementation;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -160,7 +158,106 @@ class Easy {
 
     }
 
+    static int beautifulDays(int i, int j, int k) {
 
+        int counter = 0;
+
+        for (int l = i; l <= j; l++) {
+            if (Math.abs(l - reverseInt(l)) % k == 0) counter++;
+        }
+
+        return counter;
+
+    }
+
+    static int viralAdvertising(int n) {
+
+        int cummulative = 2;
+        int lastLiked = 2;
+
+        for (int i = 2; i <= n; i++) {
+            lastLiked = lastLiked * 3 / 2;
+            cummulative += lastLiked;
+        }
+
+
+        return cummulative;
+
+    }
+
+    static int saveThePrisoner(int n, int m, int s) {
+
+        int result = ((m % n) + s - 1) % n;
+
+        if (result == 0) return n;
+        else return result;
+    }
+
+    static int[] circularArrayRotation(int[] a, int k, int[] queries) {
+
+        int startIndex = k % a.length;
+        int result[] = new int[queries.length];
+
+        for (int i = 0; i < queries.length; i++) {
+            result[i] += a[(queries[i] - startIndex + a.length) % a.length];
+        }
+
+        return result;
+
+    }
+
+    static int[] permutationEquation(int[] p) {
+
+        Map<Integer, Integer> map = new HashMap<>(p.length);
+        int[] result = new int[p.length];
+
+        for (int i = 0; i < p.length; i++) {
+            map.put(p[i], i + 1);
+        }
+
+
+        for (int i = 0; i < p.length; i++) {
+            result[i] = map.get(map.get(i + 1));
+        }
+
+        return result;
+
+    }
+
+    static int jumpingOnClouds(int[] c, int k) {
+
+        int position = 0;
+        int result = 100;
+
+        do {
+
+            position = (position + k) % c.length;
+            result -= (1 + c[position] * 2);
+
+        } while (position != 0);
+
+        return result;
+
+    }
+
+    static int findDigits(int n) {
+
+        int counter = 0;
+        int number = n;
+
+        while (number > 0) {
+
+            int v = number % 10;
+            if (v != 0 && n % v == 0) counter++;
+            number /= 10;
+        }
+
+        return counter;
+
+    }
+
+
+    // additional methods
     private static boolean isGregorianLeapYear(int year) {
         return (year % 400) == 0 || ((year % 4 == 0) && (year % 100 != 0));
     }
@@ -169,4 +266,12 @@ class Easy {
         return (year % 4) == 0;
     }
 
+    static int reverseInt(int n) {
+
+        String intReversed = new StringBuilder(String.valueOf(n)).
+                reverse().
+                toString();
+
+        return Integer.parseInt(intReversed);
+    }
 }
