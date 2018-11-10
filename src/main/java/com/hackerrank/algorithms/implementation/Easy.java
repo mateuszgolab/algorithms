@@ -256,6 +256,59 @@ class Easy {
 
     }
 
+    static String appendAndDelete(String s, String t, int k) {
+
+        int common = 0;
+        int n = Math.min(s.length(), t.length());
+
+        for (int i = 0; i < n; i++) {
+            if (s.charAt(i) == t.charAt(i)) {
+                common++;
+            } else {
+                break;
+            }
+        }
+
+        int diff = s.length() + t.length() - 2 * common;
+
+        if (diff > k) return "No";
+        else if (diff == k) return "Yes";
+        else if (s.length() + t.length() <= k) return "Yes";
+        else if ((k - diff) % 2 == 0 || (k - diff - 2 * s.length() > 0)) return "Yes";
+        else return "No";
+
+    }
+
+    static int squares(int a, int b) {
+
+        int counter = 0;
+
+        for (long i = Math.round(Math.sqrt(a)); i <= b; i++) {
+            if (i * i <= b) {
+                if (i * i >= a) counter++;
+            } else break;
+        }
+
+        return counter;
+
+    }
+
+    static int libraryFine(int d1, int m1, int y1, int d2, int m2, int y2) {
+
+        if (y1 - y2 > 0) return 10000;
+        if (y1 == y2) {
+            if (m1 == m2) {
+                if (d1 >= d2) {
+                    return (d1 - d2) * 15;
+                }
+            } else if (m1 > m2) {
+                return (m1 - m2) * 500;
+            }
+        }
+
+        return 0;
+    }
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {

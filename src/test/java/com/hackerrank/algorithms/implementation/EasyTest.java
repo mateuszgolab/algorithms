@@ -187,4 +187,60 @@ public class EasyTest {
 
     }
 
+
+    @Test
+    public void testAppendAndDelete() {
+
+        assertThat(appendAndDelete("hackerhappy", "hackerrank", 9), is("Yes"));
+        assertThat(appendAndDelete("aba", "aba", 7), is("Yes"));
+        assertThat(appendAndDelete("aba", "aba", 5), is("No"));
+        assertThat(appendAndDelete("abade", "aba", 7), is("No"));
+        assertThat(appendAndDelete("aba", "aba", 1), is("No"));
+        assertThat(appendAndDelete("aba", "aba", 2), is("Yes"));
+        assertThat(appendAndDelete("aba", "aba", 4), is("Yes"));
+        assertThat(appendAndDelete("abaab", "aba", 4), is("Yes"));
+        assertThat(appendAndDelete("ashley", "ash", 2), is("No"));
+        assertThat(appendAndDelete("ashley", "ashl", 2), is("Yes"));
+        assertThat(appendAndDelete("as", "ashley", 2), is("No"));
+        assertThat(appendAndDelete("as", "ashley", 4), is("Yes"));
+        assertThat(appendAndDelete("123456789", "1", 5), is("No"));
+        assertThat(appendAndDelete("123456789", "1", 8), is("Yes"));
+        assertThat(appendAndDelete("010101", "01010", 2), is("No"));
+        assertThat(appendAndDelete("010101", "01010", 6), is("No"));
+        assertThat(appendAndDelete("010101", "010101", 1), is("No"));
+        assertThat(appendAndDelete("010101", "010101", 3), is("No"));
+        assertThat(appendAndDelete("1", "101", 5), is("Yes"));
+        assertThat(appendAndDelete("11", "101", 5), is("Yes"));
+        assertThat(appendAndDelete("111", "101", 5), is("No"));
+        assertThat(appendAndDelete("abc", "abc", 1), is("No"));
+        assertThat(appendAndDelete("peek", "seeker", 3), is("No"));
+        assertThat(appendAndDelete("abcd", "abce", 2), is("Yes"));
+        assertThat(appendAndDelete("abcd", "abce", 3), is("No"));
+        assertThat(appendAndDelete("abcd", "abce", 4), is("Yes"));
+        assertThat(appendAndDelete("ab", "abce", 7), is("Yes"));
+
+    }
+
+    @Test
+    public void testScherlockAndSquares() {
+
+        assertThat(squares(3,9), is(2));
+        assertThat(squares(17,24), is(0));
+        assertThat(squares(1,100), is(10));
+
+    }
+
+    @Test
+    public void testLibraryFine() {
+
+        assertThat(libraryFine(9,6,2015,6,6,2015), is(45));
+        assertThat(libraryFine(9,6,2015,5,2,2015), is(2000));
+        assertThat(libraryFine(9,6,2015,5,6,2012), is(10000));
+        assertThat(libraryFine(9,6,2015,19,6,2015), is(0));
+        assertThat(libraryFine(15,2,2015,31,1,2015), is(500));
+        assertThat(libraryFine(1,3,2015,28,2,2015), is(500));
+        assertThat(libraryFine(31,3,2015,1,3,2015), is(450));
+        assertThat(libraryFine(28,3,2015,28,2,2015), is(500));
+    }
+
 }
