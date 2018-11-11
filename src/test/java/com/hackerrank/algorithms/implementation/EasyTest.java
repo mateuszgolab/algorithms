@@ -243,4 +243,27 @@ public class EasyTest {
         assertThat(libraryFine(28,3,2015,28,2,2015), is(500));
     }
 
+
+    @Test
+    public void testCutTheSticks() {
+
+        assertThat(cutTheSticks(new int[]{5,4,4,2,2,8}), is(new int[]{6,4,2,1}));
+        assertThat(cutTheSticks(new int[]{1,2,3,4,3,3,2,1}), is(new int[]{8,6,4,1}));
+
+    }
+
+
+    @Test
+    public void testRepeatedString() {
+
+        assertThat(repeatedString("abcac", 10), is(4L));
+        assertThat(repeatedString("aba", 10), is(7L));
+        assertThat(repeatedString("a", 1000000000000L), is(1000000000000L));
+        assertThat(repeatedString("ab", 1000000000000L), is(500000000000L));
+        assertThat(repeatedString("ababababab", 1000000000000L), is(500000000000L));
+        assertThat(repeatedString("bcbcb", 1000000000000L), is(0L));
+        assertThat(repeatedString("abababab", 4), is(2L));
+
+    }
+
 }

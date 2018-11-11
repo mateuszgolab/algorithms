@@ -120,7 +120,7 @@ class Easy {
     }
 
     static int hurdleRace(int k, int[] height) {
-        return Math.max(Arrays.stream(height).max().getAsInt() - k, 0);
+        return Math.max(Arrays.stream(height).max().orElse(0) - k, 0);
     }
 
     static int designerPdfViewer(int[] h, String word) {
@@ -308,6 +308,49 @@ class Easy {
 
         return 0;
     }
+
+    static int[] cutTheSticks(int[] arr) {
+
+        List<Integer> result = new ArrayList<>();
+
+        Arrays.sort(arr);
+
+        while (arr.length > 0) {
+
+            result.add(arr.length);
+
+            int min = arr[0];
+
+            arr = Arrays.stream(arr).
+                    map(v -> v - min).
+                    filter(v -> v > 0).
+                    toArray();
+
+        }
+
+        return result.stream().mapToInt(i -> i).toArray();
+
+    }
+
+    static long repeatedString(String s, long n) {
+
+        if(!s.contains("a")) return 0;
+
+        long counter = 0;
+        long iterations = n / s.length();
+
+        if(iterations > 0) {
+            counter = iterations * s.chars().filter(v -> v == 'a').count();
+        }
+
+        long rest = n - (s.length() * iterations);
+
+        counter += s.substring(0, (int)rest).chars().filter(v -> v == 'a').count();
+
+        return counter;
+
+    }
+
 
 
     // additional methods
