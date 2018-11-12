@@ -266,4 +266,16 @@ public class EasyTest {
 
     }
 
+
+    @Test
+    public void testJumpingOnTheClouds2() {
+
+        assertThat(jumpingOnClouds(new int[]{0,0,0,0,1,0}), is(3));
+        assertThat(jumpingOnClouds(new int[]{0,1,0,0,0,1,0}), is(3));
+        assertThat(jumpingOnClouds(new int[]{0,1,0,1,0,1,0}), is(3));
+        assertThat(jumpingOnClouds(new int[]{0,1,0,0,1,0,0}), is(4));
+        assertThat(jumpingOnClouds(new int[]{0,0,1,0,1,0,0}), is(4));
+
+    }
+
 }

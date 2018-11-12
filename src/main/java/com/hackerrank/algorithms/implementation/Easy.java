@@ -334,23 +334,45 @@ class Easy {
 
     static long repeatedString(String s, long n) {
 
-        if(!s.contains("a")) return 0;
+        if (!s.contains("a")) return 0;
 
         long counter = 0;
         long iterations = n / s.length();
 
-        if(iterations > 0) {
+        if (iterations > 0) {
             counter = iterations * s.chars().filter(v -> v == 'a').count();
         }
 
         long rest = n - (s.length() * iterations);
 
-        counter += s.substring(0, (int)rest).chars().filter(v -> v == 'a').count();
+        counter += s.substring(0, (int) rest).chars().filter(v -> v == 'a').count();
 
         return counter;
 
     }
 
+    static int jumpingOnClouds(int[] c) {
+
+        int jumps = 0;
+        int i = 0;
+
+        while (i < c.length) {
+
+            if ((i + 2) < c.length && c[i + 2] == 0) {
+                i += 2;
+                jumps++;
+            } else if ((i + 1) < c.length && c[i + 1] == 0) {
+                i++;
+                jumps++;
+            } else {
+                break;
+            }
+
+        }
+
+        return jumps;
+
+    }
 
 
     // additional methods
