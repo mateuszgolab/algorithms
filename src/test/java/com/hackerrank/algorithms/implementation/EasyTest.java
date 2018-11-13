@@ -278,4 +278,15 @@ public class EasyTest {
 
     }
 
+
+    @Test
+    public  void testEqualityInArray() {
+
+        assertThat(equalizeArray(new int[]{3,3,2,1,3}), is(2));
+        assertThat(equalizeArray(new int[]{3,2,2,1,3}), is(3));
+        assertThat(equalizeArray(new int[]{3,3,3,3,3}), is(0));
+        assertThat(equalizeArray(new int[]{1,2,3,4,5}), is(4));
+
+    }
+
 }

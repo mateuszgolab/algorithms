@@ -374,6 +374,31 @@ class Easy {
 
     }
 
+    static int equalizeArray(int[] arr) {
+
+        Arrays.sort(arr);
+
+        int max = 1;
+        int previous = arr[0];
+        int counter = 1;
+
+        for(int i = 1; i < arr.length; i++) {
+
+            if(arr[i] == previous) {
+                counter++;
+            } else {
+                previous = arr[i];
+                max = Math.max(max, counter);
+                counter = 1;
+            }
+        }
+
+        max = Math.max(max, counter);
+
+        return arr.length - max;
+
+    }
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {
