@@ -382,9 +382,9 @@ class Easy {
         int previous = arr[0];
         int counter = 1;
 
-        for(int i = 1; i < arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
 
-            if(arr[i] == previous) {
+            if (arr[i] == previous) {
                 counter++;
             } else {
                 previous = arr[i];
@@ -396,6 +396,34 @@ class Easy {
         max = Math.max(max, counter);
 
         return arr.length - max;
+
+    }
+
+    static int[] acmTeam(String[] topic) {
+
+        int max = 0;
+        int counter = 0;
+
+        for (int i = 0; i < topic.length; i++) {
+            for (int j = i + 1; j < topic.length; j++) {
+
+                int candidate = 0;
+
+                for (int k = 0; k < topic[i].length(); k++) {
+                    if (topic[i].charAt(k) == '1' || topic[j].charAt(k) == '1') {
+                        candidate++;
+                    }
+                }
+                if (candidate > max) {
+                    max = candidate;
+                    counter = 1;
+                } else if (candidate == max) {
+                    counter++;
+                }
+            }
+        }
+
+        return new int[]{max, counter};
 
     }
 

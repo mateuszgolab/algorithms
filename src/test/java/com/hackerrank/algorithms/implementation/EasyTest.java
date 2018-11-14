@@ -72,9 +72,9 @@ public class EasyTest {
     @Test
     public void pickingNumbersTest() {
 
-        assertThat(pickingNumbers(Arrays.asList(4,6,5,3,3,1)), is(3));
-        assertThat(pickingNumbers(Arrays.asList(1,2,2,3,1,2)), is(5));
-        assertThat(pickingNumbers(Arrays.asList(1,2,2,3,3,5)), is(4));
+        assertThat(pickingNumbers(Arrays.asList(4, 6, 5, 3, 3, 1)), is(3));
+        assertThat(pickingNumbers(Arrays.asList(1, 2, 2, 3, 1, 2)), is(5));
+        assertThat(pickingNumbers(Arrays.asList(1, 2, 2, 3, 3, 5)), is(4));
 
     }
 
@@ -82,16 +82,16 @@ public class EasyTest {
     @Test
     public void theHurdleRaceTest() {
 
-        assertThat(hurdleRace(4, new int[]{1,6,3,5,2}), is(2));
-        assertThat(hurdleRace(7, new int[]{2,5,4,5,2}), is(0));
+        assertThat(hurdleRace(4, new int[]{1, 6, 3, 5, 2}), is(2));
+        assertThat(hurdleRace(7, new int[]{2, 5, 4, 5, 2}), is(0));
 
     }
 
     @Test
     public void designPDFViewerTest() {
 
-        assertThat(designerPdfViewer(new int[]{1,3,1,3,1,4,1,3,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}, "abc"), is(9));
-        assertThat(designerPdfViewer(new int[]{1,3,1,3,1,4,1,3,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7}, "zaba"), is(28));
+        assertThat(designerPdfViewer(new int[]{1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, "abc"), is(9));
+        assertThat(designerPdfViewer(new int[]{1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7}, "zaba"), is(28));
 
     }
 
@@ -109,8 +109,8 @@ public class EasyTest {
     @Test
     public void angryProfessorTest() {
 
-        assertThat(angryProfessor(3, new int[]{-1,-3,4,2}), is("YES"));
-        assertThat(angryProfessor(2, new int[]{0,-1,2,1}), is("NO"));
+        assertThat(angryProfessor(3, new int[]{-1, -3, 4, 2}), is("YES"));
+        assertThat(angryProfessor(2, new int[]{0, -1, 2, 1}), is("NO"));
 
     }
 
@@ -140,42 +140,40 @@ public class EasyTest {
     @Test
     public void testSaveThePrisoner() {
 
-        assertThat(saveThePrisoner(5,2,1), is(2));
-        assertThat(saveThePrisoner(5,2,2), is(3));
-        assertThat(saveThePrisoner(7,19,2), is(6));
-        assertThat(saveThePrisoner(3,7,3), is(3));
-        assertThat(saveThePrisoner(3,7,1), is(1));
-        assertThat(saveThePrisoner(7,3,7), is(2));
-        assertThat(saveThePrisoner(3,1,1), is(1));
-        assertThat(saveThePrisoner(3,3,1), is(3));
+        assertThat(saveThePrisoner(5, 2, 1), is(2));
+        assertThat(saveThePrisoner(5, 2, 2), is(3));
+        assertThat(saveThePrisoner(7, 19, 2), is(6));
+        assertThat(saveThePrisoner(3, 7, 3), is(3));
+        assertThat(saveThePrisoner(3, 7, 1), is(1));
+        assertThat(saveThePrisoner(7, 3, 7), is(2));
+        assertThat(saveThePrisoner(3, 1, 1), is(1));
+        assertThat(saveThePrisoner(3, 3, 1), is(3));
 
     }
 
     @Test
     public void testCircularArrayRotation() {
 
-        assertThat(circularArrayRotation(new int[]{1,2,3}, 2, new int[]{0,1,2}), is(new int[]{2,3,1}));
-        assertThat(circularArrayRotation(new int[]{1,2,3}, 1, new int[]{0,1,2}), is(new int[]{3,1,2}));
-        assertThat(circularArrayRotation(new int[]{1,2,3}, 3, new int[]{0,1,2}), is(new int[]{1,2,3}));
+        assertThat(circularArrayRotation(new int[]{1, 2, 3}, 2, new int[]{0, 1, 2}), is(new int[]{2, 3, 1}));
+        assertThat(circularArrayRotation(new int[]{1, 2, 3}, 1, new int[]{0, 1, 2}), is(new int[]{3, 1, 2}));
+        assertThat(circularArrayRotation(new int[]{1, 2, 3}, 3, new int[]{0, 1, 2}), is(new int[]{1, 2, 3}));
     }
 
     @Test
     public void testSequenceEquation() {
 
-        assertThat(permutationEquation(new int[]{2,3,1}), is(new int[]{2,3,1}));
-        assertThat(permutationEquation(new int[]{4,3,5,1,2}), is(new int[]{1,3,5,4,2}));
+        assertThat(permutationEquation(new int[]{2, 3, 1}), is(new int[]{2, 3, 1}));
+        assertThat(permutationEquation(new int[]{4, 3, 5, 1, 2}), is(new int[]{1, 3, 5, 4, 2}));
 
     }
-
 
     @Test
     public void testJumpingOnTheCloudsRevisited() {
 
-        assertThat(jumpingOnClouds(new int[]{0,0,1,0,0,1,1,0}, 2), is(92));
-        assertThat(jumpingOnClouds(new int[]{0,0,1,0,0,1,1,0,1}, 3), is(95));
+        assertThat(jumpingOnClouds(new int[]{0, 0, 1, 0, 0, 1, 1, 0}, 2), is(92));
+        assertThat(jumpingOnClouds(new int[]{0, 0, 1, 0, 0, 1, 1, 0, 1}, 3), is(95));
 
     }
-
 
     @Test
     public void testFindDigits() {
@@ -186,7 +184,6 @@ public class EasyTest {
         assertThat(findDigits(12345678), is(4));
 
     }
-
 
     @Test
     public void testAppendAndDelete() {
@@ -224,34 +221,32 @@ public class EasyTest {
     @Test
     public void testScherlockAndSquares() {
 
-        assertThat(squares(3,9), is(2));
-        assertThat(squares(17,24), is(0));
-        assertThat(squares(1,100), is(10));
+        assertThat(squares(3, 9), is(2));
+        assertThat(squares(17, 24), is(0));
+        assertThat(squares(1, 100), is(10));
 
     }
 
     @Test
     public void testLibraryFine() {
 
-        assertThat(libraryFine(9,6,2015,6,6,2015), is(45));
-        assertThat(libraryFine(9,6,2015,5,2,2015), is(2000));
-        assertThat(libraryFine(9,6,2015,5,6,2012), is(10000));
-        assertThat(libraryFine(9,6,2015,19,6,2015), is(0));
-        assertThat(libraryFine(15,2,2015,31,1,2015), is(500));
-        assertThat(libraryFine(1,3,2015,28,2,2015), is(500));
-        assertThat(libraryFine(31,3,2015,1,3,2015), is(450));
-        assertThat(libraryFine(28,3,2015,28,2,2015), is(500));
+        assertThat(libraryFine(9, 6, 2015, 6, 6, 2015), is(45));
+        assertThat(libraryFine(9, 6, 2015, 5, 2, 2015), is(2000));
+        assertThat(libraryFine(9, 6, 2015, 5, 6, 2012), is(10000));
+        assertThat(libraryFine(9, 6, 2015, 19, 6, 2015), is(0));
+        assertThat(libraryFine(15, 2, 2015, 31, 1, 2015), is(500));
+        assertThat(libraryFine(1, 3, 2015, 28, 2, 2015), is(500));
+        assertThat(libraryFine(31, 3, 2015, 1, 3, 2015), is(450));
+        assertThat(libraryFine(28, 3, 2015, 28, 2, 2015), is(500));
     }
-
 
     @Test
     public void testCutTheSticks() {
 
-        assertThat(cutTheSticks(new int[]{5,4,4,2,2,8}), is(new int[]{6,4,2,1}));
-        assertThat(cutTheSticks(new int[]{1,2,3,4,3,3,2,1}), is(new int[]{8,6,4,1}));
+        assertThat(cutTheSticks(new int[]{5, 4, 4, 2, 2, 8}), is(new int[]{6, 4, 2, 1}));
+        assertThat(cutTheSticks(new int[]{1, 2, 3, 4, 3, 3, 2, 1}), is(new int[]{8, 6, 4, 1}));
 
     }
-
 
     @Test
     public void testRepeatedString() {
@@ -266,26 +261,31 @@ public class EasyTest {
 
     }
 
-
     @Test
     public void testJumpingOnTheClouds2() {
 
-        assertThat(jumpingOnClouds(new int[]{0,0,0,0,1,0}), is(3));
-        assertThat(jumpingOnClouds(new int[]{0,1,0,0,0,1,0}), is(3));
-        assertThat(jumpingOnClouds(new int[]{0,1,0,1,0,1,0}), is(3));
-        assertThat(jumpingOnClouds(new int[]{0,1,0,0,1,0,0}), is(4));
-        assertThat(jumpingOnClouds(new int[]{0,0,1,0,1,0,0}), is(4));
+        assertThat(jumpingOnClouds(new int[]{0, 0, 0, 0, 1, 0}), is(3));
+        assertThat(jumpingOnClouds(new int[]{0, 1, 0, 0, 0, 1, 0}), is(3));
+        assertThat(jumpingOnClouds(new int[]{0, 1, 0, 1, 0, 1, 0}), is(3));
+        assertThat(jumpingOnClouds(new int[]{0, 1, 0, 0, 1, 0, 0}), is(4));
+        assertThat(jumpingOnClouds(new int[]{0, 0, 1, 0, 1, 0, 0}), is(4));
 
     }
 
+    @Test
+    public void testEqualityInArray() {
+
+        assertThat(equalizeArray(new int[]{3, 3, 2, 1, 3}), is(2));
+        assertThat(equalizeArray(new int[]{3, 2, 2, 1, 3}), is(3));
+        assertThat(equalizeArray(new int[]{3, 3, 3, 3, 3}), is(0));
+        assertThat(equalizeArray(new int[]{1, 2, 3, 4, 5}), is(4));
+
+    }
 
     @Test
-    public  void testEqualityInArray() {
+    public void testAcmIcpcTeam() {
 
-        assertThat(equalizeArray(new int[]{3,3,2,1,3}), is(2));
-        assertThat(equalizeArray(new int[]{3,2,2,1,3}), is(3));
-        assertThat(equalizeArray(new int[]{3,3,3,3,3}), is(0));
-        assertThat(equalizeArray(new int[]{1,2,3,4,5}), is(4));
+        assertThat(acmTeam(new String[]{"10101", "11100", "11010", "00101"}), is(new int[]{5, 2}));
 
     }
 
