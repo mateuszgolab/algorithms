@@ -3,10 +3,12 @@ package com.hackerrank.algorithms.implementation;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import static com.hackerrank.algorithms.implementation.Easy.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertEquals;
 
 public class EasyTest {
 
@@ -288,5 +290,30 @@ public class EasyTest {
         assertThat(acmTeam(new String[]{"10101", "11100", "11010", "00101"}), is(new int[]{5, 2}));
 
     }
+
+    @Test
+    public void testTaumAndBday() {
+
+        assertThat(taumBday(10, 10, 1, 1, 1), is(20));
+        assertThat(taumBday(5, 9, 2, 3, 4), is(37));
+        assertThat(taumBday(3, 6, 9, 1, 1), is(12));
+        assertThat(taumBday(7, 7, 4, 2, 1), is(35));
+        assertThat(taumBday(3, 3, 1, 9, 2), is(12));
+        assertThat(taumBday(1000000000, 1, 1000000000, 1, 1), is(2000000001));
+        assertThat(taumBday(3, 3, 0, 1, 1), is(3));
+        assertThat(taumBday(0, 0, 50, 50, 10), is(0));
+
+    }
+
+
+    @Test
+    public void testKaprekarNumbers() {
+
+        assertEquals(kaprekarNumbers(1, 100), Arrays.asList(1L, 9L, 45L, 55L, 99L));
+        assertEquals(kaprekarNumbers(2, 8), Collections.emptyList());
+        assertEquals(kaprekarNumbers(95000, 100000), Arrays.asList(95121L, 99999L));
+
+    }
+
 
 }

@@ -427,6 +427,42 @@ class Easy {
 
     }
 
+    static int taumBday(int b, int w, int bc, int wc, int z) {
+
+        return Math.min(bc, (wc + z)) * b + Math.min(wc, (bc + z)) * w;
+
+    }
+
+    static List<Long> kaprekarNumbers(long p, long q) {
+
+        List<Long> result = new ArrayList<>();
+
+        for (long i = p; i <= q; i++) {
+
+            long sq = i * i;
+            String sqString = String.valueOf(sq);
+            int d = (sqString.length() + 1) / 2;
+            int r = sqString.length() - d;
+            long left;
+            long right = 0;
+
+            if (r > 0) {
+                left = Long.valueOf(sqString.substring(0, r));
+                right = Long.valueOf(sqString.substring(r));
+            } else {
+                left = Long.valueOf(sqString);
+            }
+
+            if (left + right == i) {
+                result.add(i);
+            }
+
+        }
+
+        return result;
+
+    }
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {
