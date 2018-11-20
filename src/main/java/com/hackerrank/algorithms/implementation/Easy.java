@@ -463,6 +463,59 @@ class Easy {
 
     }
 
+    static int beautifulTriplets(int d, int[] arr) {
+
+        int counter = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] - arr[i] == d) {
+                    for (int k = j + 1; k < arr.length; k++) {
+                        if (arr[k] - arr[j] == d) {
+                            counter++;
+                        }
+                    }
+                }
+            }
+        }
+
+        return counter;
+
+    }
+
+    static int minimumDistances(int[] a) {
+
+        if (a.length == 1) return -1;
+
+        int min = a.length;
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[j] == a[i]) min = Math.min(min, j - i);
+            }
+            if (min == 1) return 1;
+        }
+
+        if (min == a.length) return -1;
+        return min;
+
+    }
+
+    static int howManyGames(int p, int d, int m, int s) {
+
+        int counter = 0;
+        for (int i = p; i >= m && s >= 0; i -= d) {
+            s -= i;
+            counter++;
+        }
+
+        if (s >= 0) counter += (s / m);
+        else counter--;
+
+        return counter;
+
+    }
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {

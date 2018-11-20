@@ -80,7 +80,6 @@ public class EasyTest {
 
     }
 
-
     @Test
     public void theHurdleRaceTest() {
 
@@ -305,7 +304,6 @@ public class EasyTest {
 
     }
 
-
     @Test
     public void testKaprekarNumbers() {
 
@@ -315,5 +313,37 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testBeautifulTriplets() {
+
+        assertThat(beautifulTriplets(1, new int[]{2,2,3,4,5}), is(3));
+        assertThat(beautifulTriplets(3, new int[]{1,2,4,5,7,8,10}), is(3));
+
+    }
+
+    @Test
+    public void testMinimumDistances() {
+
+        assertThat(minimumDistances(new int[]{3,2,1,2,3}), is(2));
+        assertThat(minimumDistances(new int[]{7,1,3,4,1,7}), is(3));
+        assertThat(minimumDistances(new int[]{1,1,1,1,1,1}), is(1));
+        assertThat(minimumDistances(new int[]{1,2,3,4}), is(-1));
+        assertThat(minimumDistances(new int[]{1,2,3,4,1}), is(4));
+        assertThat(minimumDistances(new int[]{1}), is(-1));
+
+    }
+
+    @Test
+    public void testHalloweenSale() {
+
+        assertThat(howManyGames(20,3,6,100), is(10));
+        assertThat(howManyGames(20,3,6,80), is(6));
+        assertThat(howManyGames(20,3,6,19), is(0));
+        assertThat(howManyGames(20,3,6,24), is(1));
+        assertThat(howManyGames(20,3,6,38), is(2));
+        assertThat(howManyGames(20,3,6,30), is(1));
+        assertThat(howManyGames(20,3,6,55), is(3));
+
+    }
 
 }
