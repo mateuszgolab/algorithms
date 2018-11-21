@@ -516,6 +516,26 @@ class Easy {
 
     }
 
+    static int chocolateFeast(int n, int c, int m) {
+
+        int bars;
+        int totalBars = 0;
+        int coins = n;
+        int wrappers = 0;
+
+        while (coins >= c || wrappers >= m) {
+
+            bars = coins / c + wrappers / m;
+            totalBars += bars;
+            wrappers = wrappers % m + bars;
+            coins = coins % c;
+
+        }
+
+        return totalBars;
+
+    }
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {

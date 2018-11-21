@@ -346,4 +346,14 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testChocolateFeast() {
+
+        assertThat(chocolateFeast(15,3,2), is(9));
+        assertThat(chocolateFeast(10,2,5), is(6));
+        assertThat(chocolateFeast(12,4,4), is(3));
+        assertThat(chocolateFeast(6,2,2), is(5));
+
+    }
+
 }
