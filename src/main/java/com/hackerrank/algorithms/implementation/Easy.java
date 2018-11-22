@@ -536,6 +536,25 @@ class Easy {
 
     }
 
+    static int[] serviceLane(int[] lane, int[][] cases) {
+
+        int[] result = new int[cases.length];
+        int index = 0;
+
+        for(int[] c : cases){
+
+            int min = Integer.MAX_VALUE;
+            for(int i = c[0]; i <= c[1]; i++) min = Math.min(lane[i], min);
+            result[index++] = min;
+
+        }
+
+        return result;
+
+    }
+
+
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {

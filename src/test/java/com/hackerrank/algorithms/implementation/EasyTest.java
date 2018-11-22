@@ -316,19 +316,19 @@ public class EasyTest {
     @Test
     public void testBeautifulTriplets() {
 
-        assertThat(beautifulTriplets(1, new int[]{2,2,3,4,5}), is(3));
-        assertThat(beautifulTriplets(3, new int[]{1,2,4,5,7,8,10}), is(3));
+        assertThat(beautifulTriplets(1, new int[]{2, 2, 3, 4, 5}), is(3));
+        assertThat(beautifulTriplets(3, new int[]{1, 2, 4, 5, 7, 8, 10}), is(3));
 
     }
 
     @Test
     public void testMinimumDistances() {
 
-        assertThat(minimumDistances(new int[]{3,2,1,2,3}), is(2));
-        assertThat(minimumDistances(new int[]{7,1,3,4,1,7}), is(3));
-        assertThat(minimumDistances(new int[]{1,1,1,1,1,1}), is(1));
-        assertThat(minimumDistances(new int[]{1,2,3,4}), is(-1));
-        assertThat(minimumDistances(new int[]{1,2,3,4,1}), is(4));
+        assertThat(minimumDistances(new int[]{3, 2, 1, 2, 3}), is(2));
+        assertThat(minimumDistances(new int[]{7, 1, 3, 4, 1, 7}), is(3));
+        assertThat(minimumDistances(new int[]{1, 1, 1, 1, 1, 1}), is(1));
+        assertThat(minimumDistances(new int[]{1, 2, 3, 4}), is(-1));
+        assertThat(minimumDistances(new int[]{1, 2, 3, 4, 1}), is(4));
         assertThat(minimumDistances(new int[]{1}), is(-1));
 
     }
@@ -336,23 +336,31 @@ public class EasyTest {
     @Test
     public void testHalloweenSale() {
 
-        assertThat(howManyGames(20,3,6,100), is(10));
-        assertThat(howManyGames(20,3,6,80), is(6));
-        assertThat(howManyGames(20,3,6,19), is(0));
-        assertThat(howManyGames(20,3,6,24), is(1));
-        assertThat(howManyGames(20,3,6,38), is(2));
-        assertThat(howManyGames(20,3,6,30), is(1));
-        assertThat(howManyGames(20,3,6,55), is(3));
+        assertThat(howManyGames(20, 3, 6, 100), is(10));
+        assertThat(howManyGames(20, 3, 6, 80), is(6));
+        assertThat(howManyGames(20, 3, 6, 19), is(0));
+        assertThat(howManyGames(20, 3, 6, 24), is(1));
+        assertThat(howManyGames(20, 3, 6, 38), is(2));
+        assertThat(howManyGames(20, 3, 6, 30), is(1));
+        assertThat(howManyGames(20, 3, 6, 55), is(3));
 
     }
 
     @Test
     public void testChocolateFeast() {
 
-        assertThat(chocolateFeast(15,3,2), is(9));
-        assertThat(chocolateFeast(10,2,5), is(6));
-        assertThat(chocolateFeast(12,4,4), is(3));
-        assertThat(chocolateFeast(6,2,2), is(5));
+        assertThat(chocolateFeast(15, 3, 2), is(9));
+        assertThat(chocolateFeast(10, 2, 5), is(6));
+        assertThat(chocolateFeast(12, 4, 4), is(3));
+        assertThat(chocolateFeast(6, 2, 2), is(5));
+
+    }
+
+    @Test
+    public void testServiceLane() {
+
+        assertThat(serviceLane(new int[]{2, 3, 1, 2, 3, 2, 3, 3}, new int[][]{{0, 3}, {4, 6}, {6, 7}, {3, 5}, {0, 7}}), is(new int[]{1, 2, 3, 2, 1}));
+        assertThat(serviceLane(new int[]{1, 2, 2, 2, 1}, new int[][]{{2, 3}, {1, 4}, {2, 4}, {2, 4}, {2, 3}}), is(new int[]{2, 1, 1, 1, 2}));
 
     }
 
