@@ -364,4 +364,15 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testLisaWorkbook() {
+
+        assertThat(workbook(5,3, new int[]{4,2,6,1,10}), is(4));
+        assertThat(workbook(5,5, new int[]{4,2,6,1,10}), is(4));
+        assertThat(workbook(5,1, new int[]{4,2,6,1,10}), is(4));
+        assertThat(workbook(5,10, new int[]{4,2,6,1,10}), is(4));
+        assertThat(workbook(10,5, new int[]{3,8,15,11,14,1,9,2,24,31}), is(8));
+
+    }
+
 }

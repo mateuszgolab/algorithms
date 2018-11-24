@@ -541,10 +541,10 @@ class Easy {
         int[] result = new int[cases.length];
         int index = 0;
 
-        for(int[] c : cases){
+        for (int[] c : cases) {
 
             int min = Integer.MAX_VALUE;
-            for(int i = c[0]; i <= c[1]; i++) min = Math.min(lane[i], min);
+            for (int i = c[0]; i <= c[1]; i++) min = Math.min(lane[i], min);
             result[index++] = min;
 
         }
@@ -553,7 +553,33 @@ class Easy {
 
     }
 
+    static int workbook(int n, int k, int[] arr) {
 
+        int result = 0;
+        int min = 1;
+        int max = Math.min(arr[0], k);
+        int chapter = 0;
+        int page = 1;
+
+        while (chapter < arr.length) {
+
+            if (page >= min && page <= max) result++;
+
+            if (arr[chapter] - min + 1 > k) {
+                min += k;
+                max = Math.min(arr[chapter], min + k - 1);
+            } else {
+                chapter++;
+                if (chapter < arr.length) {
+                    min = 1;
+                    max = Math.min(arr[chapter], k);
+                }
+            }
+            page++;
+        }
+
+        return result;
+    }
 
 
     // additional methods
