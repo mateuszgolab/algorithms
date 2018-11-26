@@ -375,4 +375,12 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testFlatlandSpaceStations() {
+
+        assertThat(flatlandSpaceStations(5, new int[]{0,4}), is(2));
+        assertThat(flatlandSpaceStations(6, new int[]{0,1,2,3,4,5,6}), is(0));
+        assertThat(flatlandSpaceStations(6, new int[]{0}), is(5));
+
+    }
 }

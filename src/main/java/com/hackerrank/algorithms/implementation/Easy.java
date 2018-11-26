@@ -581,6 +581,22 @@ class Easy {
         return result;
     }
 
+    static int flatlandSpaceStations(int n, int[] c) {
+
+        int max = 0;
+        for (int i = 0; i < n; i++) {
+            int min = n;
+            for (int city : c) {
+                min = Math.min(min, Math.abs(city - i));
+            }
+
+            max = Math.max(max, min);
+        }
+
+        return max;
+
+    }
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {
