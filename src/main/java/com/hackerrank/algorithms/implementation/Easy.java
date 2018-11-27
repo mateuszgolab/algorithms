@@ -597,6 +597,39 @@ class Easy {
 
     }
 
+    static int fairRations(int[] B) {
+
+        int counter = 0;
+        int previousRound;
+        int round = 0;
+
+
+        do {
+            previousRound = round;
+            round = 0;
+            for (int i = 0; i < B.length; i++) {
+                if (B[i] % 2 > 0) {
+                    B[i]++;
+                    if (i + 1 < B.length) B[i + 1]++;
+                    else B[i - 1]++;
+                    round+=2;
+                }
+            }
+
+            counter += round;
+
+        } while (round > 0 && previousRound != round);
+
+
+        if (round > 0) {
+            if (counter == 0) return 0;
+            else return -1;
+        }
+
+        return counter;
+
+    }
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {

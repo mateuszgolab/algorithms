@@ -383,4 +383,22 @@ public class EasyTest {
         assertThat(flatlandSpaceStations(6, new int[]{0}), is(5));
 
     }
+
+    @Test
+    public void testFairRations() {
+
+        assertThat(fairRations(new int[]{4,5,6,7}), is(4));
+        assertThat(fairRations(new int[]{2,3,4,5,6}), is(4));
+        assertThat(fairRations(new int[]{1,2}), is(-1));
+        assertThat(fairRations(new int[]{2,2}), is(0));
+        assertThat(fairRations(new int[]{2,8}), is(0));
+        assertThat(fairRations(new int[]{1,3,4}), is(2));
+        assertThat(fairRations(new int[]{1,4,4,5}), is(6));
+        assertThat(fairRations(new int[]{1,2,3}), is(4));
+        assertThat(fairRations(new int[]{1,2,2,2,3}), is(8));
+
+    }
+
+
+
 }
