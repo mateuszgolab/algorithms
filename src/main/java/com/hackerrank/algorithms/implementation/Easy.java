@@ -612,7 +612,7 @@ class Easy {
                     B[i]++;
                     if (i + 1 < B.length) B[i + 1]++;
                     else B[i - 1]++;
-                    round+=2;
+                    round += 2;
                 }
             }
 
@@ -628,6 +628,25 @@ class Easy {
 
         return counter;
 
+    }
+
+    static String[] cavityMap(String[] grid) {
+
+        for (int i = 1; i < grid.length - 1; i++) {
+            for (int j = 1; j < grid.length - 1; j++) {
+                if (grid[i].charAt(j) > grid[i].charAt(j - 1) &&
+                        grid[i].charAt(j) > grid[i].charAt(j + 1) &&
+                        grid[i].charAt(j) > grid[i - 1].charAt(j) &&
+                        grid[i].charAt(j) > grid[i + 1].charAt(j)) {
+
+                    StringBuilder sb = new StringBuilder(grid[i]);
+                    sb.replace(j, j + 1, "X");
+                    grid[i] = sb.toString();
+                }
+            }
+        }
+
+        return grid;
     }
 
 
@@ -648,4 +667,25 @@ class Easy {
 
         return Integer.parseInt(intReversed);
     }
+
+    static class Pair<T> {
+
+        T x;
+        T y;
+
+        Pair(T x, T y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public T getX() {
+            return x;
+        }
+
+        public T getY() {
+            return y;
+        }
+
+    }
+
 }

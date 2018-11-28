@@ -399,6 +399,14 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testCavityMap() {
+
+        assertThat(cavityMap(new String[]{"989","191","111"}), is(new String[]{"989","1X1","111"}));
+        assertThat(cavityMap(new String[]{"1112","1912","1892", "1234"}), is(new String[]{"1112","1X12","18X2", "1234"}));
+
+    }
+
 
 
 }
