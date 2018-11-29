@@ -407,6 +407,14 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testManasaAndStones() {
+
+        assertThat(stones(3,1,2), is(new int[]{2,3,4}));
+        assertThat(stones(4,10,100), is(new int[]{30,120,210,300}));
+        assertThat(stones(1000,10,100).length > 0 , is(true));
+
+    }
 
 
 }

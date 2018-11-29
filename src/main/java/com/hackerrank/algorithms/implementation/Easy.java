@@ -649,6 +649,31 @@ class Easy {
         return grid;
     }
 
+    static int[] stones(int n, int a, int b) {
+
+        Set<Integer> initSet = new HashSet<>();
+        initSet.add(0);
+
+        Set<Integer> result = stonesRec(1, n, a, b, initSet);
+
+        int[] resultInt = result.parallelStream().mapToInt(i -> i).toArray();
+
+        Arrays.sort(resultInt);
+
+        return resultInt;
+    }
+
+    private static  Set<Integer> stonesRec(int i, int n, int a, int b, Set<Integer> set) {
+
+        if (i >= n) return set;
+
+        Set<Integer> tmpSet = set.parallelStream().map(v -> v + a).collect(Collectors.toSet());
+        tmpSet.addAll(set.parallelStream().map(v -> v + b).collect(Collectors.toSet()));
+
+        return stonesRec(i + 1, n , a, b , tmpSet);
+
+    }
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {
@@ -668,6 +693,7 @@ class Easy {
         return Integer.parseInt(intReversed);
     }
 
+    // additional classes
     static class Pair<T> {
 
         T x;
