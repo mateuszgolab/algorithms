@@ -663,14 +663,46 @@ class Easy {
         return resultInt;
     }
 
-    private static  Set<Integer> stonesRec(int i, int n, int a, int b, Set<Integer> set) {
+    private static Set<Integer> stonesRec(int i, int n, int a, int b, Set<Integer> set) {
 
         if (i >= n) return set;
 
         Set<Integer> tmpSet = set.parallelStream().map(v -> v + a).collect(Collectors.toSet());
         tmpSet.addAll(set.parallelStream().map(v -> v + b).collect(Collectors.toSet()));
 
-        return stonesRec(i + 1, n , a, b , tmpSet);
+        return stonesRec(i + 1, n, a, b, tmpSet);
+
+    }
+
+    static String happyLadybugs(String b) {
+
+        long empty = b.chars().filter(v -> v == '_').count();
+
+        if (b.length() - empty == 0) return "YES";
+
+
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (Character c : b.toCharArray()) {
+            if (c != '_') {
+                map.merge(c, 1, (a, b1) -> b1 + 1);
+            }
+        }
+
+        long singles = map.values().stream().filter(v -> v == 1).count();
+
+
+        if (singles > 0) {
+            return "NO";
+        } else if (empty > 0) {
+            return "YES";
+        } else {
+            for (int i = 1; i < b.length() - 1; i++) {
+                if (b.charAt(i - 1) != b.charAt(i) && b.charAt(i + 1) != b.charAt(i)) return "NO";
+            }
+
+            return "YES";
+        }
 
     }
 

@@ -416,5 +416,22 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testHappyLadybugs() {
+
+        assertThat(happyLadybugs("RBY_YBR"), is("YES"));
+        assertThat(happyLadybugs("X_Y__X"), is("NO"));
+        assertThat(happyLadybugs("__"), is("YES"));
+        assertThat(happyLadybugs("B_RRBR"), is("YES"));
+        assertThat(happyLadybugs("AABBC"), is("NO"));
+        assertThat(happyLadybugs("AABBC_C"), is("YES"));
+        assertThat(happyLadybugs("_"), is("YES"));
+        assertThat(happyLadybugs("DD__FQ_QQF"), is("YES"));
+        assertThat(happyLadybugs("AABCBC"), is("NO"));
+        assertThat(happyLadybugs("AA"), is("YES"));
+        assertThat(happyLadybugs("A"), is("NO"));
+
+    }
+
 
 }
