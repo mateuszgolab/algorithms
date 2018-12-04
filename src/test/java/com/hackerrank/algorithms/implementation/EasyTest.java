@@ -433,5 +433,15 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testStrangeCode() {
+
+        assertThat(strangeCounter(4), is(6L));
+        assertThat(strangeCounter(21), is(1L));
+        assertThat(strangeCounter(1), is(3L));
+        assertThat(strangeCounter(22), is(24L));
+
+    }
+
 
 }

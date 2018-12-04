@@ -31,13 +31,13 @@ class Easy {
         String nonLeapYear = "13.09.";
 
         if (year < 1918) {
-            if (isJulianLeapYear(year)) return leapYear + String.valueOf(year);
-            else return nonLeapYear + String.valueOf(year);
+            if (isJulianLeapYear(year)) return leapYear + year;
+            else return nonLeapYear + year;
         } else if (year == 1918) {
             return "26.09.1918";
         } else {
-            if (isGregorianLeapYear(year)) return leapYear + String.valueOf(year);
-            else return nonLeapYear + String.valueOf(year);
+            if (isGregorianLeapYear(year)) return leapYear + year;
+            else return nonLeapYear + year;
         }
     }
 
@@ -196,7 +196,7 @@ class Easy {
     static int[] circularArrayRotation(int[] a, int k, int[] queries) {
 
         int startIndex = k % a.length;
-        int result[] = new int[queries.length];
+        int[] result = new int[queries.length];
 
         for (int i = 0; i < queries.length; i++) {
             result[i] += a[(queries[i] - startIndex + a.length) % a.length];
@@ -705,6 +705,24 @@ class Easy {
         }
 
     }
+
+    static long strangeCounter(long t) {
+
+        long range = 3;
+        long accm = range;
+
+        while (t > accm) {
+            range *= 2;
+            accm += range;
+        }
+
+        accm -= range;
+
+        return range - (t - accm) + 1;
+
+
+    }
+
 
 
     // additional methods
