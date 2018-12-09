@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Random;
 
 import static com.hackerrank.algorithms.implementation.Easy.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -367,19 +368,19 @@ public class EasyTest {
     @Test
     public void testLisaWorkbook() {
 
-        assertThat(workbook(5,3, new int[]{4,2,6,1,10}), is(4));
-        assertThat(workbook(5,5, new int[]{4,2,6,1,10}), is(4));
-        assertThat(workbook(5,1, new int[]{4,2,6,1,10}), is(4));
-        assertThat(workbook(5,10, new int[]{4,2,6,1,10}), is(4));
-        assertThat(workbook(10,5, new int[]{3,8,15,11,14,1,9,2,24,31}), is(8));
+        assertThat(workbook(5, 3, new int[]{4, 2, 6, 1, 10}), is(4));
+        assertThat(workbook(5, 5, new int[]{4, 2, 6, 1, 10}), is(4));
+        assertThat(workbook(5, 1, new int[]{4, 2, 6, 1, 10}), is(4));
+        assertThat(workbook(5, 10, new int[]{4, 2, 6, 1, 10}), is(4));
+        assertThat(workbook(10, 5, new int[]{3, 8, 15, 11, 14, 1, 9, 2, 24, 31}), is(8));
 
     }
 
     @Test
     public void testFlatlandSpaceStations() {
 
-        assertThat(flatlandSpaceStations(5, new int[]{0,4}), is(2));
-        assertThat(flatlandSpaceStations(6, new int[]{0,1,2,3,4,5,6}), is(0));
+        assertThat(flatlandSpaceStations(5, new int[]{0, 4}), is(2));
+        assertThat(flatlandSpaceStations(6, new int[]{0, 1, 2, 3, 4, 5, 6}), is(0));
         assertThat(flatlandSpaceStations(6, new int[]{0}), is(5));
 
     }
@@ -387,32 +388,32 @@ public class EasyTest {
     @Test
     public void testFairRations() {
 
-        assertThat(fairRations(new int[]{4,5,6,7}), is(4));
-        assertThat(fairRations(new int[]{2,3,4,5,6}), is(4));
-        assertThat(fairRations(new int[]{1,2}), is(-1));
-        assertThat(fairRations(new int[]{2,2}), is(0));
-        assertThat(fairRations(new int[]{2,8}), is(0));
-        assertThat(fairRations(new int[]{1,3,4}), is(2));
-        assertThat(fairRations(new int[]{1,4,4,5}), is(6));
-        assertThat(fairRations(new int[]{1,2,3}), is(4));
-        assertThat(fairRations(new int[]{1,2,2,2,3}), is(8));
+        assertThat(fairRations(new int[]{4, 5, 6, 7}), is(4));
+        assertThat(fairRations(new int[]{2, 3, 4, 5, 6}), is(4));
+        assertThat(fairRations(new int[]{1, 2}), is(-1));
+        assertThat(fairRations(new int[]{2, 2}), is(0));
+        assertThat(fairRations(new int[]{2, 8}), is(0));
+        assertThat(fairRations(new int[]{1, 3, 4}), is(2));
+        assertThat(fairRations(new int[]{1, 4, 4, 5}), is(6));
+        assertThat(fairRations(new int[]{1, 2, 3}), is(4));
+        assertThat(fairRations(new int[]{1, 2, 2, 2, 3}), is(8));
 
     }
 
     @Test
     public void testCavityMap() {
 
-        assertThat(cavityMap(new String[]{"989","191","111"}), is(new String[]{"989","1X1","111"}));
-        assertThat(cavityMap(new String[]{"1112","1912","1892", "1234"}), is(new String[]{"1112","1X12","18X2", "1234"}));
+        assertThat(cavityMap(new String[]{"989", "191", "111"}), is(new String[]{"989", "1X1", "111"}));
+        assertThat(cavityMap(new String[]{"1112", "1912", "1892", "1234"}), is(new String[]{"1112", "1X12", "18X2", "1234"}));
 
     }
 
     @Test
     public void testManasaAndStones() {
 
-        assertThat(stones(3,1,2), is(new int[]{2,3,4}));
-        assertThat(stones(4,10,100), is(new int[]{30,120,210,300}));
-        assertThat(stones(1000,10,100).length > 0 , is(true));
+        assertThat(stones(3, 1, 2), is(new int[]{2, 3, 4}));
+        assertThat(stones(4, 10, 100), is(new int[]{30, 120, 210, 300}));
+        assertThat(stones(1000, 10, 100).length > 0, is(true));
 
     }
 
@@ -443,5 +444,89 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testBigSorting() {
+
+        assertThat(bigSorting(new String[]{"31415926535897932384626433832795", "1", "3", "10", "3", "5"}),
+                is(new String[]{"1", "3", "3", "5", "10", "31415926535897932384626433832795"}));
+
+        assertThat(bigSorting(new String[]{"1", "2", "100", "12303479849857341718340192371", "3084193741082937", "3084193741082938", "111", "200"}),
+                is(new String[]{"1", "2", "100", "111", "200", "3084193741082937", "3084193741082938", "12303479849857341718340192371"}));
+
+
+    }
+
+    @Test
+    public void testBigSorting2() {
+
+        Random random = new Random();
+
+        String[] input = new String[100000];
+        for (int i = 0; i < 100000; i++) {
+
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < 10000; j++) {
+                sb.append(random.nextInt(10));
+            }
+
+            input[i] = sb.toString();
+        }
+
+        assertThat(bigSorting(input).length, is(100000));
+
+
+    }
+
+    @Test
+    public void testInsertionSort1() {
+
+        assertThat(insertionSort1(5, new int[]{2, 4, 6, 8, 3}),
+                is(Arrays.asList(
+                        Arrays.asList(2, 4, 6, 8, 8),
+                        Arrays.asList(2, 4, 6, 6, 8),
+                        Arrays.asList(2, 4, 4, 6, 8),
+                        Arrays.asList(2, 3, 4, 6, 8))));
+
+        assertThat(insertionSort1(1, new int[]{2}),
+                is(Collections.singletonList(Collections.singletonList(2))));
+
+        assertThat(insertionSort1(2, new int[]{2, 3}),
+                is(Collections.singletonList(Arrays.asList(2, 3))));
+
+        assertThat(insertionSort1(2, new int[]{3, 2}),
+                is(Arrays.asList(
+                        Arrays.asList(3, 3),
+                        Arrays.asList(2, 3))));
+
+    }
+
+
+    @Test
+    public void testInsertionSort2() {
+
+        assertThat(insertionSort2(3, new int[]{4,3,1}),
+                is(Arrays.asList(
+                        Arrays.asList(3,4,1),
+                        Arrays.asList(1,3,4))));
+
+
+        assertThat(insertionSort2(2, new int[]{4,1}),
+                is(Collections.singletonList(
+                        Arrays.asList(1, 4))));
+
+        assertThat(insertionSort2(2, new int[]{1,4}),
+                is(Collections.singletonList(
+                        Arrays.asList(1, 4))));
+
+        assertThat(insertionSort2(6, new int[]{1,4,3,5,6,2}),
+                is(Arrays.asList(
+                        Arrays.asList(1,4,3,5,6,2),
+                        Arrays.asList(1,3,4,5,6,2),
+                        Arrays.asList(1,3,4,5,6,2),
+                        Arrays.asList(1,3,4,5,6,2),
+                        Arrays.asList(1,2,3,4,5,6))));
+
+
+    }
 
 }
