@@ -500,7 +500,6 @@ public class EasyTest {
 
     }
 
-
     @Test
     public void testInsertionSort2() {
 
@@ -526,6 +525,16 @@ public class EasyTest {
                         Arrays.asList(1,3,4,5,6,2),
                         Arrays.asList(1,2,3,4,5,6))));
 
+
+    }
+
+    @Test
+    public void testReducedString() {
+
+        assertThat(superReducedString("aaabccddd"), is("abd"));
+        assertThat(superReducedString("aa"), is("Empty String"));
+        assertThat(superReducedString("baab"), is("Empty String"));
+        assertThat(superReducedString("d"), is("d"));
 
     }
 

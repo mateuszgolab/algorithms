@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static java.lang.Integer.MIN_VALUE;
+
 class Easy {
 
 
@@ -749,12 +751,12 @@ class Easy {
             } else {
                 list.set(i + 1, min);
                 results.add(list);
-                min = Integer.MIN_VALUE;
+                min = MIN_VALUE;
                 return results;
             }
         }
 
-        if (min > Integer.MIN_VALUE) {
+        if (min > MIN_VALUE) {
             list = new ArrayList<>(list);
             list.set(0, min);
             results.add(list);
@@ -801,6 +803,28 @@ class Easy {
 
 
     }
+
+    static String superReducedString(String s) {
+
+        StringBuilder sb = new StringBuilder(s);
+        boolean change = true;
+
+        while(sb.length() > 0 && change) {
+            change = false;
+
+            for(int i = 0; i < sb.length() - 1; i++) {
+                if(sb.charAt(i) == sb.charAt(i+1)) {
+                    sb.replace(i,i+2, "");
+                    change = true;
+                    break;
+                }
+            }
+        }
+
+        return sb.length() == 0 ? "Empty String" : sb.toString();
+
+    }
+
 
 
     // additional methods
