@@ -773,25 +773,25 @@ class Easy {
 
         for (int i = 1; i < n; i++) {
             Stack<Integer> stack = new Stack<>();
-            for(int j = n-1; j > i; j--) stack.push(list.get(j));
+            for (int j = n - 1; j > i; j--) stack.push(list.get(j));
 
             int current = list.get(i);
 
-            for (int j = i-1; j >= 0; j--) {
-                if(current > list.get(j)) {
+            for (int j = i - 1; j >= 0; j--) {
+                if (current > list.get(j)) {
                     stack.push(current);
-                    for(int k = j; k >=0; k--) stack.push(list.get(k));
+                    for (int k = j; k >= 0; k--) stack.push(list.get(k));
                     break;
                 } else {
                     stack.push(list.get(j));
                 }
             }
 
-            if(stack.size() < n) stack.push(current);
+            if (stack.size() < n) stack.push(current);
 
 
             list = new ArrayList<>(n);
-            while(!stack.isEmpty()) {
+            while (!stack.isEmpty()) {
                 list.add(stack.pop());
             }
 
@@ -809,12 +809,12 @@ class Easy {
         StringBuilder sb = new StringBuilder(s);
         boolean change = true;
 
-        while(sb.length() > 0 && change) {
+        while (sb.length() > 0 && change) {
             change = false;
 
-            for(int i = 0; i < sb.length() - 1; i++) {
-                if(sb.charAt(i) == sb.charAt(i+1)) {
-                    sb.replace(i,i+2, "");
+            for (int i = 0; i < sb.length() - 1; i++) {
+                if (sb.charAt(i) == sb.charAt(i + 1)) {
+                    sb.replace(i, i + 2, "");
                     change = true;
                     break;
                 }
@@ -825,6 +825,11 @@ class Easy {
 
     }
 
+    static int camelcase(String s) {
+
+        return (int) (s.chars().filter(ch -> ch >= 'A' && ch <= 'Z').count() + 1);
+
+    }
 
 
     // additional methods

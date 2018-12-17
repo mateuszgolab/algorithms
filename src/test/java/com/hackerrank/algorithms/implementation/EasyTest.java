@@ -538,4 +538,14 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testCamelCase() {
+
+        assertThat(camelcase("saveChangesInTheEditor"), is(5));
+        assertThat(camelcase("sace"), is(1));
+        assertThat(camelcase("saceTrees"), is(2));
+
+    }
+
+
 }
