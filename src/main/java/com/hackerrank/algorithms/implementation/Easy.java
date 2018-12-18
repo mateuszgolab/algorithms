@@ -5,6 +5,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static java.lang.Integer.MIN_VALUE;
+import static java.lang.Integer.max;
 
 class Easy {
 
@@ -828,6 +829,31 @@ class Easy {
     static int camelcase(String s) {
 
         return (int) (s.chars().filter(ch -> ch >= 'A' && ch <= 'Z').count() + 1);
+
+    }
+
+    static int minimumNumber(int n, String password) {
+
+        final String specialCharacters = "!@#$%^&*()-+";
+
+        int numbers = 0;
+        int lowerCase = 0;
+        int upperCase = 0;
+        int special = 0;
+
+        for(Character c : password.toCharArray()) {
+            if(c >= 'a' && c <= 'z') lowerCase++;
+            else if(c >= 'A' && c <= 'Z') upperCase++;
+            else if(c >= '0' && c <= '9') numbers++;
+            else if(specialCharacters.contains(c+"")) special++;
+        }
+
+        int missing = (lowerCase == 0) ? 1 : 0;
+        if(upperCase == 0) missing++;
+        if(numbers == 0) missing++;
+        if(special == 0) missing++;
+
+        return max(6 - n, missing);
 
     }
 

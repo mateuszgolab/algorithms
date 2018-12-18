@@ -547,5 +547,13 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testStrongPassword() {
+
+        assertThat(minimumNumber(3, "Ab1"), is(3));
+        assertThat(minimumNumber(11, "#HackerRank"), is(1));
+        assertThat(minimumNumber(5, "aaaaa"), is(3));
+
+    }
 
 }
