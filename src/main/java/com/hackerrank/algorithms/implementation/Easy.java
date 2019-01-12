@@ -841,19 +841,75 @@ class Easy {
         int upperCase = 0;
         int special = 0;
 
-        for(Character c : password.toCharArray()) {
-            if(c >= 'a' && c <= 'z') lowerCase++;
-            else if(c >= 'A' && c <= 'Z') upperCase++;
-            else if(c >= '0' && c <= '9') numbers++;
-            else if(specialCharacters.contains(c+"")) special++;
+        for (Character c : password.toCharArray()) {
+            if (c >= 'a' && c <= 'z') lowerCase++;
+            else if (c >= 'A' && c <= 'Z') upperCase++;
+            else if (c >= '0' && c <= '9') numbers++;
+            else if (specialCharacters.contains(c + "")) special++;
         }
 
         int missing = (lowerCase == 0) ? 1 : 0;
-        if(upperCase == 0) missing++;
-        if(numbers == 0) missing++;
-        if(special == 0) missing++;
+        if (upperCase == 0) missing++;
+        if (numbers == 0) missing++;
+        if (special == 0) missing++;
 
         return max(6 - n, missing);
+
+    }
+
+
+    static int alternate(String s) {
+
+        s = reduceString(s);
+
+        long count = s.chars().parallel().distinct().count();
+
+        if (count == 2) {
+            return s.length();
+        } else if (count < 2) {
+            return 0;
+        } else if (s.length() == count) {
+            return 2;
+        }
+
+
+        Map<String, Long> map = Arrays.stream(s.split("")).
+                collect(Collectors.groupingBy(c -> c, Collectors.counting())).
+                entrySet().stream().
+                sorted(Map.Entry.comparingByValue()).
+                collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+
+        List<String> keys = new ArrayList<>(map.keySet());
+
+        int max = 0;
+
+        for (int i = keys.size() - 1; i >= 0; i--) {
+            for (int j = i - 1; j >= 0; j--) {
+
+                String k1 = keys.get(i);
+                String k2 = keys.get(j);
+
+                if (Math.abs(map.get(k1) - map.get(k2)) < 2) {
+
+                    String newString = s;
+                    for (String c : keys) {
+                        if (!c.equals(k1) && !c.equals(k2)) {
+                            newString = newString.replace(c, "");
+                        }
+                    }
+
+                    max = Math.max(max, alternate(newString));
+
+                } else {
+                    // increment i, no point to continue with j (keys are sorted, because map is sorted)
+                    break;
+                }
+
+            }
+        }
+
+        return max;
+
 
     }
 
@@ -876,6 +932,29 @@ class Easy {
         return Integer.parseInt(intReversed);
     }
 
+    static String reduceString(String s) {
+
+        String tmp;
+
+        do {
+
+            tmp = s;
+
+            for (int i = 1; i < s.length(); i++) {
+                if (s.charAt(i) == s.charAt(i - 1)) {
+                    s = s.replace(String.valueOf(s.charAt(i)), "");
+                    break;
+                }
+            }
+
+        } while (s.length() < tmp.length());
+
+
+        return s;
+
+    }
+
+
     // additional classes
     static class Pair<T> {
 
@@ -896,5 +975,6 @@ class Easy {
         }
 
     }
+
 
 }

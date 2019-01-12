@@ -503,27 +503,27 @@ public class EasyTest {
     @Test
     public void testInsertionSort2() {
 
-        assertThat(insertionSort2(3, new int[]{4,3,1}),
+        assertThat(insertionSort2(3, new int[]{4, 3, 1}),
                 is(Arrays.asList(
-                        Arrays.asList(3,4,1),
-                        Arrays.asList(1,3,4))));
+                        Arrays.asList(3, 4, 1),
+                        Arrays.asList(1, 3, 4))));
 
 
-        assertThat(insertionSort2(2, new int[]{4,1}),
+        assertThat(insertionSort2(2, new int[]{4, 1}),
                 is(Collections.singletonList(
                         Arrays.asList(1, 4))));
 
-        assertThat(insertionSort2(2, new int[]{1,4}),
+        assertThat(insertionSort2(2, new int[]{1, 4}),
                 is(Collections.singletonList(
                         Arrays.asList(1, 4))));
 
-        assertThat(insertionSort2(6, new int[]{1,4,3,5,6,2}),
+        assertThat(insertionSort2(6, new int[]{1, 4, 3, 5, 6, 2}),
                 is(Arrays.asList(
-                        Arrays.asList(1,4,3,5,6,2),
-                        Arrays.asList(1,3,4,5,6,2),
-                        Arrays.asList(1,3,4,5,6,2),
-                        Arrays.asList(1,3,4,5,6,2),
-                        Arrays.asList(1,2,3,4,5,6))));
+                        Arrays.asList(1, 4, 3, 5, 6, 2),
+                        Arrays.asList(1, 3, 4, 5, 6, 2),
+                        Arrays.asList(1, 3, 4, 5, 6, 2),
+                        Arrays.asList(1, 3, 4, 5, 6, 2),
+                        Arrays.asList(1, 2, 3, 4, 5, 6))));
 
 
     }
@@ -556,4 +556,42 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testReduceString() {
+
+        assertThat(reduceString("abaacdabd"), is("bcdbd"));
+        assertThat(reduceString("aabbcc"), is(""));
+        assertThat(reduceString("aababc"), is("c"));
+
+    }
+
+    @Test
+    public void testTwoCharacters() {
+
+        assertThat(alternate("abaacdabd"), is(4));
+        assertThat(alternate("beabeefeab"), is(5));
+        assertThat(alternate("abcabc"), is(4));
+        assertThat(alternate("abacacab"), is(0));
+        assertThat(alternate("abababababababababa"), is(19));
+        assertThat(alternate("abbbbbbbbbbbbba"), is(0));
+        assertThat(alternate("zxcvzxcvzxcvzxcvzxcvzxcvzxcvzxcvzxcvzxcvzxcvzxcvzxcvzxcvzxcvzxcvzxcv"), is(34));
+        assertThat(alternate("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"), is(0));
+        assertThat(alternate("a"), is(0));
+        assertThat(alternate("abcd"), is(2));
+        assertThat(alternate("abcda"), is(3));
+        assertThat(alternate(" sdad"), is(3));
+        assertThat(alternate("abacacasdfsdfsdfffffffffsdssssssdkjfhsdfjsdnckjsncksnpokdoqwkewnefjnwfjwnfelnwelfznamn" +
+                "zbvzmnbvnbviuqiweyrpqrywpgwergsjgnlkbxjgavkuysdqpfepfwlefwjhdfbskdjfhkshdfkjshfdksdfhksdfksjhfkb"), is(4));
+
+    }
+
+    @Test
+    public void testTwoCharacters2() {
+
+        assertThat(alternate(" qwertyuiop"), is(2));
+        assertThat(alternate(" qwertyuiopq"), is(3));
+        assertThat(alternate(" qwertyuiopasdfghjklzxcvbnm"), is(2));
+        assertThat(alternate(" qwertyuiopasdfghjklzxcvbnmqwertyuiop"), is(4));
+
+    }
 }
