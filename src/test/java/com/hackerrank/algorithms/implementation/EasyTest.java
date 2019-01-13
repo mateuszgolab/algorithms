@@ -594,4 +594,16 @@ public class EasyTest {
         assertThat(alternate(" qwertyuiopasdfghjklzxcvbnmqwertyuiop"), is(4));
 
     }
+
+    @Test
+    public void testCaesarCipher() {
+
+        assertThat(caesarCipher("middle-Outz", 2), is("okffng-Qwvb"));
+        assertThat(caesarCipher("aZz", 2), is("cBb"));
+        assertThat(caesarCipher("zZ", 100), is("vV"));
+        assertThat(caesarCipher("aAzZ", 0), is("aAzZ"));
+
+    }
+
+
 }

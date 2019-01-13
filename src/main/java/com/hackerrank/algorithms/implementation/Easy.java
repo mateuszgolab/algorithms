@@ -857,6 +857,27 @@ class Easy {
 
     }
 
+    static String reduceString(String s) {
+
+        String tmp;
+
+        do {
+
+            tmp = s;
+
+            for (int i = 1; i < s.length(); i++) {
+                if (s.charAt(i) == s.charAt(i - 1)) {
+                    s = s.replace(String.valueOf(s.charAt(i)), "");
+                    break;
+                }
+            }
+
+        } while (s.length() < tmp.length());
+
+
+        return s;
+
+    }
 
     static int alternate(String s) {
 
@@ -913,6 +934,37 @@ class Easy {
 
     }
 
+    static String caesarCipher(String s, int k) {
+
+        String lowA = "abcdefghijklmnopqrstuvwxyz";
+        String upA = lowA.toUpperCase();
+
+        StringBuilder sb = new StringBuilder();
+
+        for(Character c : s.toCharArray()) {
+            int lowAIndex = lowA.indexOf(c);
+            if(lowAIndex > -1) {
+                int shiftedIndex = (lowAIndex + k) % lowA.length();
+                sb.append(lowA.charAt(shiftedIndex));
+                continue;
+            }
+
+            int upIndex = upA.indexOf(c);
+            if(upIndex > -1) {
+                int shiftedIndex = (upIndex + k) % upA.length();
+                sb.append(upA.charAt(shiftedIndex));
+                continue;
+            }
+
+            sb.append(c);
+        }
+
+
+        return sb.toString();
+
+    }
+
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {
@@ -930,28 +982,6 @@ class Easy {
                 toString();
 
         return Integer.parseInt(intReversed);
-    }
-
-    static String reduceString(String s) {
-
-        String tmp;
-
-        do {
-
-            tmp = s;
-
-            for (int i = 1; i < s.length(); i++) {
-                if (s.charAt(i) == s.charAt(i - 1)) {
-                    s = s.replace(String.valueOf(s.charAt(i)), "");
-                    break;
-                }
-            }
-
-        } while (s.length() < tmp.length());
-
-
-        return s;
-
     }
 
 
