@@ -605,5 +605,37 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testMarsExploration() {
+
+        assertThat(marsExploration("SOSSPSSQSSOR"), is(3));
+        assertThat(marsExploration("SOSSOSSOS"), is(0));
+        assertThat(marsExploration("SOSSOT"), is(1));
+
+    }
+
+    @Test
+    public void testHackerrankInAString() {
+
+        assertThat(hackerrankInString("hhaacckkekraraannk"), is("YES"));
+        assertThat(hackerrankInString("rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt"), is("NO"));
+        assertThat(hackerrankInString("hackerworld"), is("NO"));
+        assertThat(hackerrankInString("hereiamstackerrank"), is("YES"));
+        assertThat(hackerrankInString("hackerrank"), is("YES"));
+        assertThat(hackerrankInString("hackerrankaasdas"), is("YES"));
+        assertThat(hackerrankInString("hackerran"), is("NO"));
+        assertThat(hackerrankInString("hackerrann"), is("NO"));
+
+    }
+
+    @Test
+    public void testPanagrams() {
+
+        assertThat(pangrams("We promptly judged antique ivory buckles for the next prize"), is("pangram"));
+        assertThat(pangrams("We promptly judged antique ivory buckles for the prize"), is("not pangram"));
+        assertThat(pangrams("The quick brown fox jumps over the lazy dog"), is("pangram"));
+
+    }
+
 
 }

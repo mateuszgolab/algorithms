@@ -941,16 +941,16 @@ class Easy {
 
         StringBuilder sb = new StringBuilder();
 
-        for(Character c : s.toCharArray()) {
+        for (Character c : s.toCharArray()) {
             int lowAIndex = lowA.indexOf(c);
-            if(lowAIndex > -1) {
+            if (lowAIndex > -1) {
                 int shiftedIndex = (lowAIndex + k) % lowA.length();
                 sb.append(lowA.charAt(shiftedIndex));
                 continue;
             }
 
             int upIndex = upA.indexOf(c);
-            if(upIndex > -1) {
+            if (upIndex > -1) {
                 int shiftedIndex = (upIndex + k) % upA.length();
                 sb.append(upA.charAt(shiftedIndex));
                 continue;
@@ -964,6 +964,44 @@ class Easy {
 
     }
 
+    static int marsExploration(String s) {
+
+        int counter = 0;
+        String sos = "SOS";
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != sos.charAt(i % 3)) counter++;
+        }
+
+        return counter;
+
+    }
+
+    static String hackerrankInString(String s) {
+
+        String check = "hackerrank";
+        int index = 0;
+
+        for (Character c : s.toCharArray()) {
+            if (c == check.charAt(index)) index++;
+            if (index >= check.length()) return "YES";
+        }
+
+        return "NO";
+
+    }
+
+    static String pangrams(String s) {
+
+        Set<Character> letters = new HashSet<>();
+
+        for (Character c : s.toLowerCase().replace(" ","").toCharArray()) {
+            letters.add(c);
+        }
+
+        return (letters.size() < 26) ? "not pangram" : "pangram";
+
+    }
 
 
     // additional methods
