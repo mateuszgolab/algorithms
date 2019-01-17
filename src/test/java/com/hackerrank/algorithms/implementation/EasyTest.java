@@ -637,5 +637,13 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testWeightedUniformString() {
+
+        assertThat(weightedUniformStrings("abccddde", new int[]{1, 3, 12, 5, 9, 10}), is(new String[]{"Yes", "Yes", "Yes", "Yes", "No", "No"}));
+        assertThat(weightedUniformStrings("aaabbbbcccddd", new int[]{9, 7, 8, 12, 5}), is(new String[]{"Yes", "No", "Yes", "Yes", "No"}));
+        assertThat(weightedUniformStrings("a", new int[]{1, 9, 7, 8, 12}), is(new String[]{"Yes", "No", "No", "No", "No"}));
+
+    }
 
 }

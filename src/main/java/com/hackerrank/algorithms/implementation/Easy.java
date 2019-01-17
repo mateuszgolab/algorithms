@@ -995,11 +995,38 @@ class Easy {
 
         Set<Character> letters = new HashSet<>();
 
-        for (Character c : s.toLowerCase().replace(" ","").toCharArray()) {
+        for (Character c : s.toLowerCase().replace(" ", "").toCharArray()) {
             letters.add(c);
         }
 
         return (letters.size() < 26) ? "not pangram" : "pangram";
+
+    }
+
+    static String[] weightedUniformStrings(String s, int[] queries) {
+
+        Map<Integer, Boolean> map = new HashMap<>();
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+        char previous = ' ';
+        int counter = 0;
+
+        for (Character c : s.toCharArray()) {
+
+            if (c == previous) {
+                counter++;
+            } else {
+                counter = 1;
+            }
+
+            int weight = alphabet.indexOf(c) + 1;
+            map.put(weight * counter, true);
+            previous = c;
+        }
+
+        return Arrays.stream(queries).
+                mapToObj(q -> map.containsKey(q) ? "Yes" : "No").
+                toArray(String[]::new);
 
     }
 
