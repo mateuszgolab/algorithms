@@ -646,4 +646,24 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testSeparateNumbers() {
+
+        assertThat(separateNumbers("1234"), is(1L));
+        assertThat(separateNumbers("91011"), is(9L));
+        assertThat(separateNumbers("99100"), is(99L));
+        assertThat(separateNumbers("101103"), is(-1L));
+        assertThat(separateNumbers("010203"), is(-1L));
+        assertThat(separateNumbers("13"), is(-1L));
+        assertThat(separateNumbers("1"), is(-1L));
+        assertThat(separateNumbers("99910001001"), is(999L));
+        assertThat(separateNumbers("99910001001"), is(999L));
+        assertThat(separateNumbers("7891011"), is(7L));
+        assertThat(separateNumbers("9899100"), is(98L));
+        assertThat(separateNumbers("999100010001"), is(-1L));
+        assertThat(separateNumbers("10000000000000001000000000000001"), is(1000000000000000L));
+
+    }
+
+
 }

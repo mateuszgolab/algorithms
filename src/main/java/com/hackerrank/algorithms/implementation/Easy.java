@@ -1030,6 +1030,38 @@ class Easy {
 
     }
 
+    static long separateNumbers(String s) {
+
+        int maxSize = s.length() / 2;
+
+        for (int size = 1; size <= maxSize; size++) {
+
+            String s2 = s;
+            long n = Long.valueOf(s2.substring(0, size));
+
+            while (!s2.isEmpty()) {
+
+                String candidateString = String.valueOf(n) + (n + 1);
+
+                if (s2.startsWith(candidateString)) {
+                    s2 = s2.replaceFirst(String.valueOf(n), "");
+                    n++;
+                    if (s2.compareTo(String.valueOf(n)) == 0) s2 = "";
+                } else {
+                    break;
+                }
+            }
+
+
+            if (s2.isEmpty()) {
+                return Long.valueOf(s.substring(0, size));
+            }
+        }
+
+        return -1;
+
+    }
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {
