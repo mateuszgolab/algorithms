@@ -1062,6 +1062,22 @@ class Easy {
 
     }
 
+    static String funnyString(String s) {
+
+        String r = new StringBuilder(s).reverse().toString();
+
+        for (int i = 0; i < s.length() - 1; i++) {
+
+            if (Math.abs(s.charAt(i + 1) - s.charAt(i)) != Math.abs(r.charAt(i + 1) - r.charAt(i))) {
+                return "Not Funny";
+            }
+
+        }
+
+        return "Funny";
+
+    }
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {

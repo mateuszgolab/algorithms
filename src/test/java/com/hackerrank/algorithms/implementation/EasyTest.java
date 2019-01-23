@@ -665,5 +665,14 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testFunnyString() {
+
+        assertThat(funnyString("acxz"), is("Funny"));
+        assertThat(funnyString("bcxz"), is("Not Funny"));
+        assertThat(funnyString("a"), is("Funny"));
+        assertThat(funnyString("aaa"), is("Funny"));
+
+    }
 
 }
