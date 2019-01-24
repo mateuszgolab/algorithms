@@ -1078,6 +1078,32 @@ class Easy {
 
     }
 
+    static int gemstones(String[] arr) {
+
+        Set<Character> set = new HashSet<>();
+
+        for(String s : arr) {
+
+            List<Character> list = s.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
+
+            if(!set.isEmpty()) {
+                set.retainAll(list);
+                if(set.isEmpty()) return 0;
+            } else {
+                set.addAll(list);
+            }
+
+        }
+
+        return set.size();
+
+    }
+
+
+
+
+
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {

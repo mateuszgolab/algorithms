@@ -675,4 +675,14 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testGemStones() {
+
+        assertThat(gemstones(new String[]{"abcdde","baccd","eeabg"}), is(2));
+        assertThat(gemstones(new String[]{"abc","abc","bc"}), is(2));
+        assertThat(gemstones(new String[]{"abc","def","ghj"}), is(0));
+
+    }
+
+
 }
