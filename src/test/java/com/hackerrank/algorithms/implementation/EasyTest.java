@@ -684,5 +684,17 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testAlternatingCharacters() {
+
+        assertThat(alternatingCharacters("AAAA"), is(3));
+        assertThat(alternatingCharacters("BBBBB"), is(4));
+        assertThat(alternatingCharacters("ABABABAB"), is(0));
+        assertThat(alternatingCharacters("BABABA"), is(0));
+        assertThat(alternatingCharacters("AAABBB"), is(4));
+        assertThat(alternatingCharacters("A"), is(0));
+
+    }
+
 
 }

@@ -1082,13 +1082,13 @@ class Easy {
 
         Set<Character> set = new HashSet<>();
 
-        for(String s : arr) {
+        for (String s : arr) {
 
             List<Character> list = s.chars().mapToObj(e -> (char) e).collect(Collectors.toList());
 
-            if(!set.isEmpty()) {
+            if (!set.isEmpty()) {
                 set.retainAll(list);
-                if(set.isEmpty()) return 0;
+                if (set.isEmpty()) return 0;
             } else {
                 set.addAll(list);
             }
@@ -1099,8 +1099,19 @@ class Easy {
 
     }
 
+    static int alternatingCharacters(String s) {
 
+        int counter = 0;
+        char previous = s.charAt(0);
 
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) == previous) counter++;
+            else previous = s.charAt(i);
+        }
+
+        return counter;
+
+    }
 
 
 
