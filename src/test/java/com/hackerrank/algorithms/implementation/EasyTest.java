@@ -696,5 +696,19 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testBeautifulBinaryString() {
+
+        assertThat(beautifulBinaryString("0101010"), is(2));
+        assertThat(beautifulBinaryString("01100"), is(0));
+        assertThat(beautifulBinaryString("0100101010"), is(3));
+        assertThat(beautifulBinaryString("1"), is(0));
+        assertThat(beautifulBinaryString("0"), is(0));
+        assertThat(beautifulBinaryString("010"), is(1));
+        assertThat(beautifulBinaryString("010010010"), is(3));
+        assertThat(beautifulBinaryString("01010"), is(1));
+
+    }
+
 
 }

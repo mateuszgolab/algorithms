@@ -1113,7 +1113,18 @@ class Easy {
 
     }
 
+    static int beautifulBinaryString(String b) {
 
+        int count = 0;
+
+        while (b.contains("010")) {
+            b = b.replaceFirst("010", "011");
+            count++;
+        }
+
+        return count;
+
+    }
 
 
     // additional methods
