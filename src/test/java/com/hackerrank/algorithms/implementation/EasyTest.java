@@ -710,5 +710,15 @@ public class EasyTest {
 
     }
 
+    @Test
+    public void testTheLoveLetterMystery() {
+
+        assertThat(theLoveLetterMystery("abc"), is(2));
+        assertThat(theLoveLetterMystery("abcba"), is(0));
+        assertThat(theLoveLetterMystery("abcd"), is(4));
+        assertThat(theLoveLetterMystery("cba"), is(2));
+        assertThat(theLoveLetterMystery("c"), is(0));
+
+    }
 
 }

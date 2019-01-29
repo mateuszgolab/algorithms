@@ -1126,6 +1126,18 @@ class Easy {
 
     }
 
+    static int theLoveLetterMystery(String s) {
+
+        int counter = 0;
+
+        for (int i = 0, j = s.length() - 1; i < j; i++, j--) {
+            counter += Math.abs(s.charAt(i) - s.charAt(j));
+        }
+
+        return counter;
+
+    }
+
 
     // additional methods
     private static boolean isGregorianLeapYear(int year) {
