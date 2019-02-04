@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-class Easy {
+class ImplementationEasy {
 
 
     static int countingValleys(int n, String s) {

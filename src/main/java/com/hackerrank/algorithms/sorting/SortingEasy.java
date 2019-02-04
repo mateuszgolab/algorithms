@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import static java.lang.Integer.MIN_VALUE;
 
-class Easy {
+class SortingEasy {
 
 
     static String[] bigSorting(String[] unsorted) {
@@ -95,18 +95,35 @@ class Easy {
         List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
 
         int counter = 0;
-        for(int i = 1; i < list.size(); i++) {
-            for(int j = 0; j < i; j++) {
-                if(list.get(i) < list.get(j)){
+        for (int i = 1; i < list.size(); i++) {
+            for (int j = 0; j < i; j++) {
+                if (list.get(i) < list.get(j)) {
                     Integer value = list.remove(i);
                     list.add(j, value);
-                    counter += (i-j);
+                    counter += (i - j);
                     break;
                 }
             }
         }
 
         return counter;
+
+    }
+
+    static int[] quickSort(int[] arr) {
+
+        List<Integer> left = new ArrayList<>(arr.length);
+        List<Integer> right = new ArrayList<>(arr.length);
+
+        for (int i : arr) {
+            if (i < arr[0]) left.add(i);
+            else if (i > arr[0]) right.add(i);
+        }
+
+        left.add(arr[0]);
+        left.addAll(right);
+
+        return left.stream().mapToInt(i -> i).toArray();
 
     }
 

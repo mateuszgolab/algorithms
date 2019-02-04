@@ -5,12 +5,12 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.Collections;
 
-import static com.hackerrank.algorithms.implementation.Easy.*;
+import static com.hackerrank.algorithms.implementation.ImplementationEasy.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
 
-public class EasyTest {
+public class ImplementationEasyTest {
 
     @Test
     public void countingValleysTest() {

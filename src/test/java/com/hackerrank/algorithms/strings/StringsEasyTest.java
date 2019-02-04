@@ -2,11 +2,11 @@ package com.hackerrank.algorithms.strings;
 
 import org.junit.Test;
 
-import static com.hackerrank.algorithms.strings.Easy.*;
+import static com.hackerrank.algorithms.strings.StringsEasy.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class EasyTest {
+public class StringsEasyTest {
 
 
 

@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import static java.lang.Integer.max;
 
-class Easy {
+class StringsEasy {
 
     static String superReducedString(String s) {
 

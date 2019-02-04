@@ -6,11 +6,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
-import static com.hackerrank.algorithms.sorting.Easy.*;
+import static com.hackerrank.algorithms.sorting.SortingEasy.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class EasyTest {
+public class SortingEasyTest {
 
 
     @Test
@@ -105,5 +105,15 @@ public class EasyTest {
 
 
     }
+
+    @Test
+    public void testQuickSort1() {
+
+        assertThat(quickSort(new int[]{4, 5, 3, 7, 2}), is(new int[]{3, 2, 4, 5, 7}));
+        assertThat(quickSort(new int[]{4, 5, 13, 17, 20}), is(new int[]{4, 5, 13, 17, 20}));
+        assertThat(quickSort(new int[]{40, 35, 33, 27, 20}), is(new int[]{35, 33, 27, 20, 40}));
+
+    }
+
 
 }
