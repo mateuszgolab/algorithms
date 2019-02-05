@@ -1,9 +1,6 @@
 package com.hackerrank.algorithms.sorting;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.lang.Integer.MIN_VALUE;
@@ -127,5 +124,25 @@ class SortingEasy {
 
     }
 
+    static int[] countingSort(int[] arr) {
+
+        final int limit = 100;
+
+        Map<Integer, Integer> map = new HashMap<>(limit);
+
+        for (int i : arr) {
+            map.merge(i, 1, (a, b) -> a + b);
+        }
+
+        int[] result = new int[limit];
+
+        for (int i = 0; i < limit; i++) {
+            Integer value = map.get(i);
+            result[i] = (value == null) ? 0 : value;
+        }
+
+        return result;
+
+    }
 
 }
