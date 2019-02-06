@@ -145,4 +145,31 @@ class SortingEasy {
 
     }
 
+    static int[] countingSort2(int[] arr) {
+
+        final int limit = 100;
+
+        Map<Integer, Integer> map = new HashMap<>(limit);
+
+        for (int i : arr) {
+            map.merge(i, 1, (a, b) -> a + b);
+        }
+
+        int[] result = new int[arr.length];
+
+        for (int i = 0, j = 0; i < limit; i++) {
+            Integer value = map.get(i);
+
+            if (value != null) {
+                for (int k = 0; k < value; k++) {
+                    result[j++] = i;
+                }
+            }
+
+        }
+
+        return result;
+
+    }
+
 }
