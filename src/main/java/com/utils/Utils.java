@@ -1,11 +1,11 @@
 package com.utils;
 
-import java.util.List;
+import java.util.Collection;
 
 public class Utils {
 
-    static int[] listIntegerToArrayInt(List<Integer> list) {
-        return list.stream().mapToInt(i -> i).toArray();
+    static int[] collectionIntegerToArrayInt(Collection<Integer> collection) {
+        return collection.stream().mapToInt(i -> i).toArray();
     }
 
 

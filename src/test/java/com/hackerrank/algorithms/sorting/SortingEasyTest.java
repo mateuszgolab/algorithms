@@ -1,5 +1,6 @@
 package com.hackerrank.algorithms.sorting;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -26,6 +27,7 @@ public class SortingEasyTest {
     }
 
     @Test
+    @Ignore
     public void testBigSorting2() {
 
         Random random = new Random();
@@ -130,6 +132,18 @@ public class SortingEasyTest {
                 is(new int[]{1, 1, 3, 3, 6, 8, 9, 9, 10, 12, 13, 16, 16, 18, 20, 21, 21, 22, 23, 24, 25, 25, 25, 27, 27, 30, 30, 32, 32, 32, 33, 33, 33, 34, 39, 39, 40, 40, 41, 42, 43, 44, 44, 46, 46, 48, 50, 53, 56, 56, 57, 59, 60, 61, 63, 65, 67, 67, 68, 69, 69, 69, 70, 70, 73, 73, 74, 75, 75, 76, 78, 78, 79, 79, 80, 81, 81, 82, 83, 83, 84, 85, 86, 86, 87, 87, 89, 89, 89, 90, 90, 91, 92, 94, 95, 96, 98, 98, 99, 99}));
 
         assertThat(countingSort2(new int[]{19, 10, 12, 10, 24, 25, 22}), is(new int[]{10, 10, 12, 19, 22, 24, 25}));
+
+    }
+
+    @Test
+    public void testClosestNumbers() {
+
+        assertThat(closestNumbers(new int[]{5, 2, 3, 4, 1}), is(new int[]{1, 2, 2, 3, 3, 4, 4, 5}));
+        assertThat(closestNumbers(new int[]{-20, -3916237, -357920, -3620601, 7374819, -7330761, 30, 6246457, -6461594, 266854}), is(new int[]{-20, 30}));
+        assertThat(closestNumbers(new int[]{-20, -3916237, -357920, -3620601, 7374819, -7330761, 30, 6246457, -6461594, 266854, -520, -470}), is(new int[]{-520, -470, -20, 30}));
+        assertThat(closestNumbers(new int[]{5, 4, 3, 2}), is(new int[]{2, 3, 3, 4, 4, 5}));
+        assertThat(closestNumbers(new int[]{-5, 15, 25, 71, 63}), is(new int[]{63, 71}));
+        assertThat(closestNumbers(new int[]{-5, 15}), is(new int[]{-5, 15}));
 
     }
 

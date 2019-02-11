@@ -3,8 +3,6 @@ package com.hackerrank.algorithms.sorting;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.lang.Integer.MIN_VALUE;
-
 class SortingEasy {
 
 
@@ -34,16 +32,13 @@ class SortingEasy {
             } else {
                 list.set(i + 1, min);
                 results.add(list);
-                min = MIN_VALUE;
                 return results;
             }
         }
 
-        if (min > MIN_VALUE) {
-            list = new ArrayList<>(list);
-            list.set(0, min);
-            results.add(list);
-        }
+        list = new ArrayList<>(list);
+        list.set(0, min);
+        results.add(list);
 
         return results;
 
@@ -171,5 +166,32 @@ class SortingEasy {
         return result;
 
     }
+
+    static int[] closestNumbers(int[] arr) {
+
+        Arrays.sort(arr);
+
+        int min = Integer.MAX_VALUE;
+        List<Integer> indices = new ArrayList<>();
+
+        for (int i = 0; i < arr.length - 1; i++) {
+
+            int minCandidate = arr[i + 1] - arr[i];
+            if (minCandidate == min) {
+                indices.add(arr[i]);
+                indices.add(arr[i + 1]);
+            } else if (minCandidate < min) {
+                min = minCandidate;
+                indices.clear();
+                indices.add(arr[i]);
+                indices.add(arr[i + 1]);
+            }
+
+        }
+
+        return indices.stream().mapToInt(i -> i).toArray();
+
+    }
+
 
 }
