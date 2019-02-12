@@ -147,5 +147,14 @@ public class SortingEasyTest {
 
     }
 
+    @Test
+    public void testFindTheMedian() {
+
+        assertThat(findMedian(new int[]{0, 1, 2, 4, 6, 5, 3}), is(3));
+        assertThat(findMedian(new int[]{3}), is(3));
+        assertThat(findMedian(new int[]{3,3,3}), is(3));
+        assertThat(findMedian(new int[]{3,3,3,1,5}), is(3));
+
+    }
 
 }
