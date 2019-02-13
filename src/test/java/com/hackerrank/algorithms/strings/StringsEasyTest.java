@@ -2,6 +2,8 @@ package com.hackerrank.algorithms.strings;
 
 import org.junit.Test;
 
+import java.util.Random;
+
 import static com.hackerrank.algorithms.strings.StringsEasy.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -203,5 +205,30 @@ public class StringsEasyTest {
 
     }
 
+    @Test
+    public void testPalindromeIndex() {
+
+        assertThat(palindromeIndex("aaab"), is(3));
+        assertThat(palindromeIndex("baa"), is(0));
+        assertThat(palindromeIndex("aaa"), is(-1));
+        assertThat(palindromeIndex("asdsd"), is(-1));
+
+    }
+
+    @Test
+    public void testPalindromeIndexBig() {
+
+        String alphabet = "abcdefghijklmnopqrstuwvxyz";
+        Random random = new Random();
+        int n = 100000;
+
+        StringBuilder sb = new StringBuilder(n);
+        for(int i = 0; i < n; i++){
+            sb.append(alphabet.charAt(random.nextInt(alphabet.length())));
+        }
+
+        assertThat(palindromeIndex(sb.toString()), is(-1));
+
+    }
 
 }

@@ -1,8 +1,10 @@
 package com.hackerrank.algorithms.strings;
 
+
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static com.utils.Common.isPalindrome;
 import static java.lang.Integer.max;
 
 class StringsEasy {
@@ -340,7 +342,30 @@ class StringsEasy {
 
     }
 
+    static int palindromeIndex(String s) {
 
+        for (int i = 0; i < s.length(); i++) {
+
+            if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
+
+                String candidate = s.substring(0, i) + s.substring(i + 1);
+                if (isPalindrome(candidate)) {
+                    return i;
+                }
+
+                candidate = s.substring(0, s.length() - 1 - i) + s.substring(s.length() - i);
+                if (isPalindrome(candidate)) {
+                    return s.length() - 1 - i;
+                }
+
+                return -1;
+            }
+
+        }
+
+        return -1;
+
+    }
 
 
 }
