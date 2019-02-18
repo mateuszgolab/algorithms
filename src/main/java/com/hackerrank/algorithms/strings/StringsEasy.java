@@ -2,6 +2,7 @@ package com.hackerrank.algorithms.strings;
 
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static com.utils.Common.isPalindrome;
@@ -364,6 +365,37 @@ class StringsEasy {
         }
 
         return -1;
+
+    }
+
+    static int anagram(String s) {
+
+        if (s.length() % 2 != 0) return -1;
+
+        List<Character> letters = s.chars().distinct().mapToObj(i -> (char) i).collect(Collectors.toList());
+
+        Map<Character, Long> word1Map = s.substring(0, s.length() / 2).
+                chars().
+                mapToObj(i -> (char) i).
+                collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        Map<Character, Long> word2Map = s.substring(s.length() / 2).
+                chars().
+                mapToObj(i -> (char) i).
+                collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+
+        Long counter = 0L;
+
+        for (Character c : letters) {
+            long diff = word1Map.getOrDefault(c, 0L) - word2Map.getOrDefault(c, 0L);
+            if (diff > 0) {
+                counter += diff;
+            }
+        }
+
+        return counter.intValue();
+
 
     }
 

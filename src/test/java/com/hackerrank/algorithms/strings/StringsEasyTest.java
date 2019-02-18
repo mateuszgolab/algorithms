@@ -231,4 +231,18 @@ public class StringsEasyTest {
 
     }
 
+    @Test
+    public void testAnagram() {
+
+        assertThat(anagram("aaabbb"), is(3));
+        assertThat(anagram("ab"), is(1));
+        assertThat(anagram("abc"), is(-1));
+        assertThat(anagram("mnop"), is(2));
+        assertThat(anagram("xyyx"), is(0));
+        assertThat(anagram("xaxbbbxx"), is(1));
+        assertThat(anagram("aaaaaaaaaaaaaaaa"), is(0));
+        assertThat(anagram("abcdbcde"), is(1));
+
+    }
+
 }
