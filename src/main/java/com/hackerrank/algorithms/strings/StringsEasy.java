@@ -399,5 +399,30 @@ class StringsEasy {
 
     }
 
+    static int makingAnagrams(String s1, String s2) {
+
+        List<Character> letters = (s1 + s2).chars().distinct().mapToObj(i -> (char) i).collect(Collectors.toList());
+
+        Map<Character, Long> word1Map = s1.chars().
+                mapToObj(i -> (char) i).
+                collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        Map<Character, Long> word2Map = s2.chars().
+                mapToObj(i -> (char) i).
+                collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+
+        Long counter = 0L;
+
+        for (Character c : letters) {
+            long diff = Math.abs(word1Map.getOrDefault(c, 0L) - word2Map.getOrDefault(c, 0L));
+            counter += diff;
+
+        }
+
+        return counter.intValue();
+
+    }
+
 
 }

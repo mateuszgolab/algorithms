@@ -245,4 +245,15 @@ public class StringsEasyTest {
 
     }
 
+    @Test
+    public void testMakingAnagrams() {
+
+        assertThat(makingAnagrams("cde", "abc"), is(4));
+        assertThat(makingAnagrams("amnop", "abc"), is(6));
+        assertThat(makingAnagrams("aaa", "bbb"), is(6));
+        assertThat(makingAnagrams("abc", "abc"), is(0));
+
+    }
+
+
 }
