@@ -255,5 +255,16 @@ public class StringsEasyTest {
 
     }
 
+    @Test
+    public void testGameOfThrones() {
+
+        assertThat(gameOfThrones("aaabbbb"), is("YES"));
+        assertThat(gameOfThrones("aaaabbbb"), is("YES"));
+        assertThat(gameOfThrones("aaabbb"), is("NO"));
+        assertThat(gameOfThrones("cdefghmnopqrstuvw"), is("NO"));
+        assertThat(gameOfThrones("a"), is("YES"));
+        assertThat(gameOfThrones("aa"), is("YES"));
+        assertThat(gameOfThrones("aabbbbbcc"), is("YES"));
+    }
 
 }

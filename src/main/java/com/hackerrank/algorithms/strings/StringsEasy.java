@@ -424,5 +424,19 @@ class StringsEasy {
 
     }
 
+    static String gameOfThrones(String s) {
+
+        long oddCount = s.chars().
+                mapToObj(i -> (char) i).
+                collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).
+                entrySet().
+                stream().
+                filter(entry -> entry.getValue() % 2 > 0).
+                count();
+
+        return oddCount > 1 ? "NO" : "YES";
+
+    }
+
 
 }
