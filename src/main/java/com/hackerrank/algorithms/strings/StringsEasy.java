@@ -438,5 +438,15 @@ class StringsEasy {
 
     }
 
+    static String twoStrings(String s1, String s2) {
+
+        Set<Integer> s1Set = s1.chars().boxed().collect(Collectors.toSet());
+        Set<Integer> s2Set = s2.chars().boxed().collect(Collectors.toSet());
+
+        s1Set.retainAll(s2Set);
+
+        return s1Set.isEmpty() ? "NO" : "YES";
+
+    }
 
 }

@@ -267,4 +267,15 @@ public class StringsEasyTest {
         assertThat(gameOfThrones("aabbbbbcc"), is("YES"));
     }
 
+    @Test
+    public void testTwoStrings() {
+
+        assertThat(twoStrings("hello", "world"), is("YES"));
+        assertThat(twoStrings("hi", "world"), is("NO"));
+        assertThat(twoStrings("d", "a"), is("NO"));
+        assertThat(twoStrings("a", "a"), is("YES"));
+        assertThat(twoStrings("absdsd", "ertert"), is("NO"));
+
+    }
+
 }
