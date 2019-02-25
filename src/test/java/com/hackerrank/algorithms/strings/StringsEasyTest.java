@@ -278,4 +278,15 @@ public class StringsEasyTest {
 
     }
 
+    @Test
+    public void testStringConstruction() {
+
+        assertThat(stringConstruction("abcd"), is(4));
+        assertThat(stringConstruction("abab"), is(2));
+        assertThat(stringConstruction("abcab"), is(3));
+        assertThat(stringConstruction("asdddddasd"), is(3));
+
+    }
+
+
 }

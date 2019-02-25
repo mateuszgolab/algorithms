@@ -449,4 +449,11 @@ class StringsEasy {
 
     }
 
+    static int stringConstruction(String s) {
+
+        return (int) s.chars().distinct().count();
+
+    }
+
+
 }
