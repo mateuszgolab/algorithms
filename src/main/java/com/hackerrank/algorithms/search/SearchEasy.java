@@ -1,6 +1,8 @@
 package com.hackerrank.algorithms.search;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 class SearchEasy {
 
@@ -44,5 +46,26 @@ class SearchEasy {
 
     }
 
+    static int[] missingNumbers(int[] arr, int[] brr) {
+
+        Map<Integer, Long> array1 = Arrays.stream(arr).boxed().
+                collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        Map<Integer, Long> array2 = Arrays.stream(brr).boxed().
+                collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        Set<Integer> result = new HashSet<>();
+
+        for(int a2: brr) {
+            long diff = array2.getOrDefault(a2, 0L) - array1.getOrDefault(a2, 0L);
+            if(diff > 0){
+                result.add(a2);
+            }
+        }
+
+        return result.stream().mapToInt(i -> i).sorted().toArray();
+
+
+    }
 
 }
