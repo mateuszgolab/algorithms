@@ -56,15 +56,36 @@ class SearchEasy {
 
         Set<Integer> result = new HashSet<>();
 
-        for(int a2: brr) {
+        for (int a2 : brr) {
             long diff = array2.getOrDefault(a2, 0L) - array1.getOrDefault(a2, 0L);
-            if(diff > 0){
+            if (diff > 0) {
                 result.add(a2);
             }
         }
 
         return result.stream().mapToInt(i -> i).sorted().toArray();
 
+
+    }
+
+    static String balancedSums(List<Integer> arr) {
+
+        if (arr.size() < 2) return "YES";
+
+        long sumLeft = 0;
+        long sumRight = arr.stream().mapToInt(i -> i).sum() - arr.get(0);
+
+        if (sumLeft == sumRight) return "YES";
+
+        for (int i = 1; i < arr.size(); i++) {
+            sumLeft += arr.get(i - 1);
+            sumRight -= arr.get(i);
+
+            if (sumLeft == sumRight) return "YES";
+
+        }
+
+        return "NO";
 
     }
 
