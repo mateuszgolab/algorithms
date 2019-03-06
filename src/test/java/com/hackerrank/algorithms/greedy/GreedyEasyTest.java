@@ -2,6 +2,7 @@ package com.hackerrank.algorithms.greedy;
 
 import org.junit.Test;
 
+import static com.hackerrank.algorithms.greedy.GreedyEasy.marcsCakewalk;
 import static com.hackerrank.algorithms.greedy.GreedyEasy.minimumAbsoluteDifference;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -15,6 +16,19 @@ public class GreedyEasyTest {
         assertThat(minimumAbsoluteDifference(new int[]{3, -7, 0}), is(3));
         assertThat(minimumAbsoluteDifference(new int[]{-59, -36, -13, 1, -53, -92, -2, -96, -54, 75}), is(1));
         assertThat(minimumAbsoluteDifference(new int[]{1, -3, 71, 68, 17}), is(3));
+
+    }
+
+    @Test
+    public void testMarcsCakeWalk() {
+
+        assertThat(marcsCakewalk(new int[]{5,10,7}), is(44L));
+        assertThat(marcsCakewalk(new int[]{1,3,2}), is(11L));
+        assertThat(marcsCakewalk(new int[]{7,4,9,6}), is(79L));
+        assertThat(marcsCakewalk(new int[]{1}), is(1L));
+        assertThat(marcsCakewalk(new int[]{1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,
+                1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000}),
+                is(68719476735000L));
 
     }
 
