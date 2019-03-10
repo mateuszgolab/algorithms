@@ -2,6 +2,8 @@ package com.hackerrank.algorithms.greedy;
 
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 class GreedyEasy {
 
@@ -32,5 +34,24 @@ class GreedyEasy {
         return result;
 
     }
+
+    static String gridChallenge(String[] grid) {
+
+        List<int[]> sortedStrings = Arrays.stream(grid).
+                map(s -> s.chars().sorted().toArray()).
+                collect(Collectors.toList());
+
+        for (int i = 0; i < sortedStrings.get(0).length; i++) {
+            for (int j = 0; j < sortedStrings.size() - 1; j++) {
+                if (sortedStrings.get(j)[i] > sortedStrings.get(j + 1)[i]) {
+                    return "NO";
+                }
+            }
+        }
+
+        return "YES";
+
+    }
+
 
 }

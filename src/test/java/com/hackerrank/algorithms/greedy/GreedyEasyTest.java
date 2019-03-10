@@ -2,8 +2,7 @@ package com.hackerrank.algorithms.greedy;
 
 import org.junit.Test;
 
-import static com.hackerrank.algorithms.greedy.GreedyEasy.marcsCakewalk;
-import static com.hackerrank.algorithms.greedy.GreedyEasy.minimumAbsoluteDifference;
+import static com.hackerrank.algorithms.greedy.GreedyEasy.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -29,6 +28,15 @@ public class GreedyEasyTest {
         assertThat(marcsCakewalk(new int[]{1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,
                 1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000}),
                 is(68719476735000L));
+
+    }
+
+    @Test
+    public void testGridChallenge() {
+
+        assertThat(gridChallenge(new String[]{"abc","ade","efg"}), is("YES"));
+        assertThat(gridChallenge(new String[]{"ebacd","fghij","olmkn","trpqs","xywuv"}), is("YES"));
+        assertThat(gridChallenge(new String[]{"xyz","ade","efg"}), is("NO"));
 
     }
 
