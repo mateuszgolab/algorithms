@@ -1,6 +1,7 @@
 package com.hackerrank.algorithms.greedy;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -53,5 +54,26 @@ class GreedyEasy {
 
     }
 
+    static int luckBalance(int k, int[][] contests) {
+
+        List<Integer> important = new ArrayList<>();
+        int counter = 0;
+
+        for(int[] contest : contests) {
+            if(contest[1] == 1) {
+                important.add(contest[0]);
+            }
+            counter += contest[0];
+        }
+
+        important.sort(null);
+
+        for(int i = 0; i < important.size() - k; i++){
+            counter -= 2*important.get(i);
+        }
+
+        return counter;
+
+    }
 
 }
