@@ -49,4 +49,18 @@ public class GreedyEasyTest {
 
     }
 
+    @Test
+    public void testMaximumPerimiter() {
+
+        assertThat(maximumPerimeterTriangle(new int[]{1,2,3,4,5,10}), is(new int[]{3,4,5}));
+        assertThat(maximumPerimeterTriangle(new int[]{1,1,1,3,3}), is(new int[]{1,3,3}));
+        assertThat(maximumPerimeterTriangle(new int[]{1,2,3}), is(new int[]{-1}));
+        assertThat(maximumPerimeterTriangle(new int[]{1,2,3}), is(new int[]{-1}));
+        assertThat(maximumPerimeterTriangle(new int[]{1,1,1,2,3,5}), is(new int[]{1,1,1}));
+        assertThat(maximumPerimeterTriangle(new int[]{2,2,3}), is(new int[]{2,2,3}));
+        assertThat(maximumPerimeterTriangle(new int[]{2,3,3,3,3,4}), is(new int[]{3,3,4}));
+        assertThat(maximumPerimeterTriangle(new int[]{10, 10, 9}), is(new int[]{9, 10, 10}));
+        assertThat(maximumPerimeterTriangle(new int[]{1000000000, 1000000000, 900000000}), is(new int[]{900000000, 1000000000, 1000000000}));
+
+    }
 }

@@ -59,8 +59,8 @@ class GreedyEasy {
         List<Integer> important = new ArrayList<>();
         int counter = 0;
 
-        for(int[] contest : contests) {
-            if(contest[1] == 1) {
+        for (int[] contest : contests) {
+            if (contest[1] == 1) {
                 important.add(contest[0]);
             }
             counter += contest[0];
@@ -68,11 +68,48 @@ class GreedyEasy {
 
         important.sort(null);
 
-        for(int i = 0; i < important.size() - k; i++){
-            counter -= 2*important.get(i);
+        for (int i = 0; i < important.size() - k; i++) {
+            counter -= 2 * important.get(i);
         }
 
         return counter;
+
+    }
+
+    static int[] maximumPerimeterTriangle(int[] sticks) {
+
+        Arrays.sort(sticks);
+
+        long max = 0;
+        int A = 0;
+        int B = 0;
+        int C = 0;
+
+        for (int a = 0; a < sticks.length; a++) {
+            for (int b = a + 1; b < sticks.length; b++) {
+                for (int c = b + 1; c < sticks.length; c++) {
+                    if (sticks[c] < (sticks[a] + sticks[b])) {
+                        long sum = (long)sticks[a] + (long)sticks[b] + (long)sticks[c];
+                        if (sum > max) {
+                            A = sticks[a];
+                            B = sticks[b];
+                            C = sticks[c];
+                            max = sum;
+                        } else if (sum == max) {
+                            if (sticks[c] > C || (sticks[c] == C && sticks[a] > A)) {
+                                A = sticks[a];
+                                B = sticks[b];
+                                C = sticks[c];
+                                max = sum;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (max == 0) return new int[]{-1};
+        else return new int[]{A, B, C};
 
     }
 
