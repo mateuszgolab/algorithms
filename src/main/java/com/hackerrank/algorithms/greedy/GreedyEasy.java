@@ -4,6 +4,8 @@ package com.hackerrank.algorithms.greedy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 class GreedyEasy {
@@ -89,7 +91,7 @@ class GreedyEasy {
             for (int b = a + 1; b < sticks.length; b++) {
                 for (int c = b + 1; c < sticks.length; c++) {
                     if (sticks[c] < (sticks[a] + sticks[b])) {
-                        long sum = (long)sticks[a] + (long)sticks[b] + (long)sticks[c];
+                        long sum = (long) sticks[a] + (long) sticks[b] + (long) sticks[c];
                         if (sum > max) {
                             A = sticks[a];
                             B = sticks[b];
@@ -110,6 +112,29 @@ class GreedyEasy {
 
         if (max == 0) return new int[]{-1};
         else return new int[]{A, B, C};
+
+    }
+
+    static int beautifulPairs(int[] A, int[] B) {
+
+        Map<Integer, Long> Amap = Arrays.stream(A).
+                boxed().
+                collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        Map<Integer, Long> Bmap = Arrays.stream(B).
+                boxed().
+                collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        int count = Arrays.stream(A).
+                distinct().
+                map(a -> (int) Math.min(Amap.get(a), Bmap.getOrDefault(a, 0L))).
+                sum();
+
+
+        if (count == A.length) count--;
+        else count++;
+
+        return count;
 
     }
 

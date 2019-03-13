@@ -63,4 +63,20 @@ public class GreedyEasyTest {
         assertThat(maximumPerimeterTriangle(new int[]{1000000000, 1000000000, 900000000}), is(new int[]{900000000, 1000000000, 1000000000}));
 
     }
+
+    @Test
+    public void testBeautifulPairs() {
+
+        assertThat(beautifulPairs(new int []{1,2,3,4}, new int[]{1,2,3,3}), is(4));
+        assertThat(beautifulPairs(new int []{3,5,7,11,5,8}, new int[]{5,7,11,10,5,8}), is(6));
+        assertThat(beautifulPairs(new int []{10,11,12,5,14}, new int[]{8,9,11,11,5}), is(3));
+        assertThat(beautifulPairs(new int []{10,11,12,5,14}, new int[]{8,9,11,11,11}), is(2));
+        assertThat(beautifulPairs(new int []{1,1}, new int[]{1,1}), is(1));
+        assertThat(beautifulPairs(new int []{1}, new int[]{1}), is(0));
+        assertThat(beautifulPairs(new int []{1,1,2}, new int[]{1,2,2}), is(3));
+        assertThat(beautifulPairs(new int []{1,1,2}, new int[]{2,2,2}), is(2));
+        assertThat(beautifulPairs(new int []{1,2,3}, new int[]{4,5,6}), is(1));
+        assertThat(beautifulPairs(new int []{1,2,3}, new int[]{1,2,3}), is(2));
+
+    }
 }
