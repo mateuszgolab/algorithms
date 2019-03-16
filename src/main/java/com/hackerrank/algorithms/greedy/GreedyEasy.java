@@ -1,10 +1,7 @@
 package com.hackerrank.algorithms.greedy;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -135,6 +132,23 @@ class GreedyEasy {
         else count++;
 
         return count;
+
+    }
+
+    static String decentNumber(int n) {
+
+        if (n < 8 && (n % 3 > 0) && (n % 5 > 0)) return "-1";
+
+        switch (n % 3) {
+            case 0:
+                return String.join("", Collections.nCopies(n / 3, "555"));
+            case 1:
+                return String.join("", Collections.nCopies((n - 10) / 3, "555")) + "3333333333";
+            case 2:
+                return String.join("", Collections.nCopies((n - 5) / 3, "555")) + "33333";
+            default:
+                return "-1";
+        }
 
     }
 

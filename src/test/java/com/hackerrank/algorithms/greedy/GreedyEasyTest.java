@@ -79,4 +79,24 @@ public class GreedyEasyTest {
         assertThat(beautifulPairs(new int []{1,2,3}, new int[]{1,2,3}), is(2));
 
     }
+
+    @Test
+    public void testSherlockAndTheBeast() {
+
+        assertThat(decentNumber(1), is("-1"));
+        assertThat(decentNumber(2), is("-1"));
+        assertThat(decentNumber(3), is("555"));
+        assertThat(decentNumber(4), is("-1"));
+        assertThat(decentNumber(5), is("33333"));
+        assertThat(decentNumber(6), is("555555"));
+        assertThat(decentNumber(7), is("-1"));
+        assertThat(decentNumber(8), is("55533333"));
+        assertThat(decentNumber(9), is("555555555"));
+        assertThat(decentNumber(10), is("3333333333"));
+        assertThat(decentNumber(19), is("5555555553333333333"));
+
+
+    }
+
+
 }
