@@ -152,4 +152,22 @@ class GreedyEasy {
 
     }
 
+    static int toys(int[] w) {
+
+        Arrays.sort(w);
+
+        int counter = 0;
+
+        for (int i = 0; i < w.length; ) {
+            counter++;
+            int start = i;
+            for (int j = start; j < w.length && (w[j] < (w[start] + 5)); j++) {
+                i++;
+            }
+        }
+
+        return counter;
+
+    }
+
 }

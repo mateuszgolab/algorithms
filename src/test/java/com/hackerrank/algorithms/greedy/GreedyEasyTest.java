@@ -98,5 +98,17 @@ public class GreedyEasyTest {
 
     }
 
+    @Test
+    public void testPriyankaAndToys() {
+
+        assertThat(toys(new int[]{1,2,3,4,5,10,11,12,13}), is(2));
+        assertThat(toys(new int[]{1,2,3,21,7,12,14,21}), is(4));
+        assertThat(toys(new int[]{1}), is(1));
+        assertThat(toys(new int[]{1,1,1,1,1,1}), is(1));
+        assertThat(toys(new int[]{1,1,1,1,1,1,1,1,1,1}), is(1));
+        assertThat(toys(new int[]{1,1,1,1,1,1,1,1,1,1,1}), is(1));
+        assertThat(toys(new int[]{1,10,20}), is(3));
+
+    }
 
 }
