@@ -170,4 +170,41 @@ class GreedyEasy {
 
     }
 
+    static int[] largestPermutation(int k, int[] arr) {
+
+        int[] sorted = Arrays.stream(arr).
+                boxed().
+                sorted(Comparator.reverseOrder()).
+                mapToInt(i -> i).
+                toArray();
+
+
+        if (k >= arr.length) {
+            return sorted;
+        }
+
+
+        Map<Integer, Integer> map = new HashMap<>(arr.length);
+        for (int i = 0; i < arr.length; i++) {
+            map.put(arr[i], i);
+        }
+
+
+        for (int i = 0; k > 0 && i < arr.length; i++) {
+            int max = sorted[i];
+            int index = map.get(max);
+
+            if (i != index) {
+                k--;
+                arr[index] = arr[i];
+                map.put(arr[i], index);
+                arr[i] = max;
+
+            }
+        }
+
+        return arr;
+
+    }
+
 }

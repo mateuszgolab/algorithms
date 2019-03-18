@@ -111,4 +111,17 @@ public class GreedyEasyTest {
 
     }
 
+    @Test
+    public void testLargestPermutation(){
+
+        assertThat(largestPermutation(1,new int[]{1,2,3,4}), is(new int[]{4,2,3,1}));
+        assertThat(largestPermutation(1,new int[]{4,2,3,5,1}), is(new int[]{5,2,3,4,1}));
+        assertThat(largestPermutation(1,new int[]{2,1,3}), is(new int[]{3,1,2}));
+        assertThat(largestPermutation(1,new int[]{2,1}), is(new int[]{2,1}));
+        assertThat(largestPermutation(1,new int[]{2}), is(new int[]{2}));
+        assertThat(largestPermutation(1,new int[]{2}), is(new int[]{2}));
+        assertThat(largestPermutation(2,new int[]{4,5,7,2,3}), is(new int[]{7,5,4,3,2}));
+
+    }
+
 }
