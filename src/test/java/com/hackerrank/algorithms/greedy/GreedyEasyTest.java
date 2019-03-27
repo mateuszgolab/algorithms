@@ -124,4 +124,16 @@ public class GreedyEasyTest {
 
     }
 
+    @Test
+    public void testMarkAndToys() {
+
+        assertThat(maximumToys(new int[]{1,2,3,4}, 7),is(3));
+        assertThat(maximumToys(new int[]{1,12,5,111,200,1000,10}, 50),is(4));
+        assertThat(maximumToys(new int[]{1}, 50),is(1));
+        assertThat(maximumToys(new int[]{100}, 50),is(0));
+        assertThat(maximumToys(new int[]{1000000000, 1000000000,1000000000}, 1000000000),is(1));
+        assertThat(maximumToys(new int[]{1, 2,3}, 1000000000),is(3));
+
+    }
+
 }

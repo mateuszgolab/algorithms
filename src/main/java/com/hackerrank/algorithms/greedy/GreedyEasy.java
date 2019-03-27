@@ -207,4 +207,21 @@ class GreedyEasy {
 
     }
 
+    static int maximumToys(int[] prices, int k) {
+
+        Arrays.sort(prices);
+
+        int numberOfToys = 0;
+        int counter = 0;
+
+        for (int p : prices) {
+            if (counter + p > k) return numberOfToys;
+            numberOfToys++;
+            counter += p;
+        }
+
+        return numberOfToys;
+    }
+
+
 }
