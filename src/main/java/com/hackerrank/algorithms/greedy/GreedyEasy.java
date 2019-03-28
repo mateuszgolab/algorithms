@@ -223,5 +223,34 @@ class GreedyEasy {
         return numberOfToys;
     }
 
+    static int[] jimOrders(int[][] orders) {
+
+        Set<Integer> summary = new HashSet<>(orders.length);
+        Map<Integer, List<Integer>> mapSummaryToIndex = new HashMap<>();
+        int i = 1;
+        for(int[] o : orders) {
+            int sum = o[0] + o[1];
+            summary.add(sum);
+            List<Integer> list = mapSummaryToIndex.getOrDefault(sum, new ArrayList<>());
+            list.add(i++);
+            mapSummaryToIndex.put(sum, list);
+        }
+
+        List<Integer> summaryList = new ArrayList<>(summary);
+        Collections.sort(summaryList);
+        int[] result = new int[orders.length];
+
+        int counter = 0;
+        for (int s : summaryList) {
+            List<Integer> list = mapSummaryToIndex.get(s);
+            Collections.sort(list);
+            for (int l : list) {
+                result[counter++] = l;
+            }
+        }
+
+        return result;
+
+    }
 
 }

@@ -52,13 +52,13 @@ public class GreedyEasyTest {
     @Test
     public void testMaximumPerimiter() {
 
-        assertThat(maximumPerimeterTriangle(new int[]{1,2,3,4,5,10}), is(new int[]{3,4,5}));
-        assertThat(maximumPerimeterTriangle(new int[]{1,1,1,3,3}), is(new int[]{1,3,3}));
-        assertThat(maximumPerimeterTriangle(new int[]{1,2,3}), is(new int[]{-1}));
-        assertThat(maximumPerimeterTriangle(new int[]{1,2,3}), is(new int[]{-1}));
-        assertThat(maximumPerimeterTriangle(new int[]{1,1,1,2,3,5}), is(new int[]{1,1,1}));
-        assertThat(maximumPerimeterTriangle(new int[]{2,2,3}), is(new int[]{2,2,3}));
-        assertThat(maximumPerimeterTriangle(new int[]{2,3,3,3,3,4}), is(new int[]{3,3,4}));
+        assertThat(maximumPerimeterTriangle(new int[]{1, 2, 3, 4, 5, 10}), is(new int[]{3, 4, 5}));
+        assertThat(maximumPerimeterTriangle(new int[]{1, 1, 1, 3, 3}), is(new int[]{1, 3, 3}));
+        assertThat(maximumPerimeterTriangle(new int[]{1, 2, 3}), is(new int[]{-1}));
+        assertThat(maximumPerimeterTriangle(new int[]{1, 2, 3}), is(new int[]{-1}));
+        assertThat(maximumPerimeterTriangle(new int[]{1, 1, 1, 2, 3, 5}), is(new int[]{1, 1, 1}));
+        assertThat(maximumPerimeterTriangle(new int[]{2, 2, 3}), is(new int[]{2, 2, 3}));
+        assertThat(maximumPerimeterTriangle(new int[]{2, 3, 3, 3, 3, 4}), is(new int[]{3, 3, 4}));
         assertThat(maximumPerimeterTriangle(new int[]{10, 10, 9}), is(new int[]{9, 10, 10}));
         assertThat(maximumPerimeterTriangle(new int[]{1000000000, 1000000000, 900000000}), is(new int[]{900000000, 1000000000, 1000000000}));
 
@@ -67,16 +67,16 @@ public class GreedyEasyTest {
     @Test
     public void testBeautifulPairs() {
 
-        assertThat(beautifulPairs(new int []{1,2,3,4}, new int[]{1,2,3,3}), is(4));
-        assertThat(beautifulPairs(new int []{3,5,7,11,5,8}, new int[]{5,7,11,10,5,8}), is(6));
-        assertThat(beautifulPairs(new int []{10,11,12,5,14}, new int[]{8,9,11,11,5}), is(3));
-        assertThat(beautifulPairs(new int []{10,11,12,5,14}, new int[]{8,9,11,11,11}), is(2));
-        assertThat(beautifulPairs(new int []{1,1}, new int[]{1,1}), is(1));
-        assertThat(beautifulPairs(new int []{1}, new int[]{1}), is(0));
-        assertThat(beautifulPairs(new int []{1,1,2}, new int[]{1,2,2}), is(3));
-        assertThat(beautifulPairs(new int []{1,1,2}, new int[]{2,2,2}), is(2));
-        assertThat(beautifulPairs(new int []{1,2,3}, new int[]{4,5,6}), is(1));
-        assertThat(beautifulPairs(new int []{1,2,3}, new int[]{1,2,3}), is(2));
+        assertThat(beautifulPairs(new int[]{1, 2, 3, 4}, new int[]{1, 2, 3, 3}), is(4));
+        assertThat(beautifulPairs(new int[]{3, 5, 7, 11, 5, 8}, new int[]{5, 7, 11, 10, 5, 8}), is(6));
+        assertThat(beautifulPairs(new int[]{10, 11, 12, 5, 14}, new int[]{8, 9, 11, 11, 5}), is(3));
+        assertThat(beautifulPairs(new int[]{10, 11, 12, 5, 14}, new int[]{8, 9, 11, 11, 11}), is(2));
+        assertThat(beautifulPairs(new int[]{1, 1}, new int[]{1, 1}), is(1));
+        assertThat(beautifulPairs(new int[]{1}, new int[]{1}), is(0));
+        assertThat(beautifulPairs(new int[]{1, 1, 2}, new int[]{1, 2, 2}), is(3));
+        assertThat(beautifulPairs(new int[]{1, 1, 2}, new int[]{2, 2, 2}), is(2));
+        assertThat(beautifulPairs(new int[]{1, 2, 3}, new int[]{4, 5, 6}), is(1));
+        assertThat(beautifulPairs(new int[]{1, 2, 3}, new int[]{1, 2, 3}), is(2));
 
     }
 
@@ -101,38 +101,48 @@ public class GreedyEasyTest {
     @Test
     public void testPriyankaAndToys() {
 
-        assertThat(toys(new int[]{1,2,3,4,5,10,11,12,13}), is(2));
-        assertThat(toys(new int[]{1,2,3,21,7,12,14,21}), is(4));
+        assertThat(toys(new int[]{1, 2, 3, 4, 5, 10, 11, 12, 13}), is(2));
+        assertThat(toys(new int[]{1, 2, 3, 21, 7, 12, 14, 21}), is(4));
         assertThat(toys(new int[]{1}), is(1));
-        assertThat(toys(new int[]{1,1,1,1,1,1}), is(1));
-        assertThat(toys(new int[]{1,1,1,1,1,1,1,1,1,1}), is(1));
-        assertThat(toys(new int[]{1,1,1,1,1,1,1,1,1,1,1}), is(1));
-        assertThat(toys(new int[]{1,10,20}), is(3));
+        assertThat(toys(new int[]{1, 1, 1, 1, 1, 1}), is(1));
+        assertThat(toys(new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}), is(1));
+        assertThat(toys(new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}), is(1));
+        assertThat(toys(new int[]{1, 10, 20}), is(3));
 
     }
 
     @Test
-    public void testLargestPermutation(){
+    public void testLargestPermutation() {
 
-        assertThat(largestPermutation(1,new int[]{1,2,3,4}), is(new int[]{4,2,3,1}));
-        assertThat(largestPermutation(1,new int[]{4,2,3,5,1}), is(new int[]{5,2,3,4,1}));
-        assertThat(largestPermutation(1,new int[]{2,1,3}), is(new int[]{3,1,2}));
-        assertThat(largestPermutation(1,new int[]{2,1}), is(new int[]{2,1}));
-        assertThat(largestPermutation(1,new int[]{2}), is(new int[]{2}));
-        assertThat(largestPermutation(1,new int[]{2}), is(new int[]{2}));
-        assertThat(largestPermutation(2,new int[]{4,5,7,2,3}), is(new int[]{7,5,4,3,2}));
+        assertThat(largestPermutation(1, new int[]{1, 2, 3, 4}), is(new int[]{4, 2, 3, 1}));
+        assertThat(largestPermutation(1, new int[]{4, 2, 3, 5, 1}), is(new int[]{5, 2, 3, 4, 1}));
+        assertThat(largestPermutation(1, new int[]{2, 1, 3}), is(new int[]{3, 1, 2}));
+        assertThat(largestPermutation(1, new int[]{2, 1}), is(new int[]{2, 1}));
+        assertThat(largestPermutation(1, new int[]{2}), is(new int[]{2}));
+        assertThat(largestPermutation(1, new int[]{2}), is(new int[]{2}));
+        assertThat(largestPermutation(2, new int[]{4, 5, 7, 2, 3}), is(new int[]{7, 5, 4, 3, 2}));
 
     }
 
     @Test
     public void testMarkAndToys() {
 
-        assertThat(maximumToys(new int[]{1,2,3,4}, 7),is(3));
-        assertThat(maximumToys(new int[]{1,12,5,111,200,1000,10}, 50),is(4));
-        assertThat(maximumToys(new int[]{1}, 50),is(1));
-        assertThat(maximumToys(new int[]{100}, 50),is(0));
-        assertThat(maximumToys(new int[]{1000000000, 1000000000,1000000000}, 1000000000),is(1));
-        assertThat(maximumToys(new int[]{1, 2,3}, 1000000000),is(3));
+        assertThat(maximumToys(new int[]{1, 2, 3, 4}, 7), is(3));
+        assertThat(maximumToys(new int[]{1, 12, 5, 111, 200, 1000, 10}, 50), is(4));
+        assertThat(maximumToys(new int[]{1}, 50), is(1));
+        assertThat(maximumToys(new int[]{100}, 50), is(0));
+        assertThat(maximumToys(new int[]{1000000000, 1000000000, 1000000000}, 1000000000), is(1));
+        assertThat(maximumToys(new int[]{1, 2, 3}, 1000000000), is(3));
+
+    }
+
+    @Test
+    public void testJimAndTheOrders() {
+
+        assertThat(jimOrders(new int[][]{new int[]{8, 3}, new int[]{5, 6}, new int[]{6, 2}, new int[]{2, 3}, new int[]{4, 3}}), is(new int[]{4, 5, 3, 1, 2}));
+        assertThat(jimOrders(new int[][]{new int[]{1, 3}, new int[]{2, 3}, new int[]{3, 3}}), is(new int[]{1, 2, 3}));
+        assertThat(jimOrders(new int[][]{new int[]{8, 1}, new int[]{4, 2}, new int[]{5, 6}, new int[]{3, 1}, new int[]{4, 3}}), is(new int[]{4, 2, 5, 1, 3}));
+        assertThat(jimOrders(new int[][]{new int[]{8, 1}, new int[]{4, 5}, new int[]{5, 4}, new int[]{3, 6}, new int[]{4, 5}}), is(new int[]{1, 2, 3, 4, 5}));
 
     }
 
