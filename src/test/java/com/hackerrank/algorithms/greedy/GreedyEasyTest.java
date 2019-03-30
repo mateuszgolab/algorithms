@@ -146,4 +146,16 @@ public class GreedyEasyTest {
 
     }
 
+    @Test
+    public void testTwoArrays() {
+
+        assertThat(twoArrays(1, new int[]{1,0}, new int[]{0,2}), is("YES"));
+        assertThat(twoArrays(1, new int[]{1,0}, new int[]{0,0}), is("NO"));
+        assertThat(twoArrays(1, new int[]{1}, new int[]{0}), is("YES"));
+        assertThat(twoArrays(2, new int[]{1}, new int[]{0}), is("NO"));
+        assertThat(twoArrays(10, new int[]{2,1,3}, new int[]{7,8,9}), is("YES"));
+        assertThat(twoArrays(5, new int[]{1,2,2,1}, new int[]{3,3,3,4}), is("NO"));
+
+    }
+
 }

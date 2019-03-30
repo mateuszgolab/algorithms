@@ -228,7 +228,7 @@ class GreedyEasy {
         Set<Integer> summary = new HashSet<>(orders.length);
         Map<Integer, List<Integer>> mapSummaryToIndex = new HashMap<>();
         int i = 1;
-        for(int[] o : orders) {
+        for (int[] o : orders) {
             int sum = o[0] + o[1];
             summary.add(sum);
             List<Integer> list = mapSummaryToIndex.getOrDefault(sum, new ArrayList<>());
@@ -251,6 +251,22 @@ class GreedyEasy {
 
         return result;
 
+    }
+
+    static String twoArrays(int k, int[] A, int[] B) {
+
+        Arrays.sort(A);
+        B = Arrays.stream(B).
+                boxed().
+                sorted(Comparator.reverseOrder()).
+                mapToInt(i -> i).
+                toArray();
+
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] + B[i] < k) return "NO";
+        }
+
+        return "YES";
     }
 
 }
