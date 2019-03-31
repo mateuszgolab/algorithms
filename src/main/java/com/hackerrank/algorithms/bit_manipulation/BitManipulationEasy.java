@@ -1,24 +1,11 @@
 package com.hackerrank.algorithms.bit_manipulation;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Arrays;
 
 class BitManipulationEasy {
 
     static int lonelyinteger(int[] a) {
-
-        Set<Integer> set = new HashSet<>();
-
-        for (int i : a) {
-            if (set.contains(i)) {
-                set.remove(i);
-            } else {
-                set.add(i);
-            }
-        }
-
-        return set.iterator().next();
-
+        return Arrays.stream(a).reduce(0, (x, y) -> x^y);
     }
 
 }
