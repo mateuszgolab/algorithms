@@ -41,4 +41,19 @@ public class BitManipulationEasyTest {
 
     }
 
+    @Test
+    public void testFlippingBits() {
+
+        assertThat(flippingBits(9), is(4294967286L));
+        assertThat(flippingBits(2147483647), is(2147483648L));
+        assertThat(flippingBits(1), is(4294967294L));
+        assertThat(flippingBits(4), is(4294967291L));
+        assertThat(flippingBits(123456), is(4294843839L));
+        assertThat(flippingBits(0), is(4294967295L));
+        assertThat(flippingBits(802743475), is(3492223820L));
+        assertThat(flippingBits(35601423), is(4259365872L));
+
+    }
+
+
 }
