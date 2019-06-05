@@ -1,0 +1,28 @@
+package com.hackerrank.algorithms.game_theory;
+
+import org.junit.Test;
+
+import static com.hackerrank.algorithms.game_theory.GameTheoryEasy.gameOfStones;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
+public class GameTheoryEasyTest {
+
+    @Test
+    public void testGameOfStones() {
+
+        assertThat(gameOfStones(1), is("Second"));
+        assertThat(gameOfStones(2), is("First"));
+        assertThat(gameOfStones(3), is("First"));
+        assertThat(gameOfStones(4), is("First"));
+        assertThat(gameOfStones(5), is("First"));
+        assertThat(gameOfStones(6), is("First"));
+        assertThat(gameOfStones(7), is("Second"));
+        assertThat(gameOfStones(8), is("Second"));
+        assertThat(gameOfStones(9), is("First"));
+        assertThat(gameOfStones(10), is("First"));
+        assertThat(gameOfStones(11), is("First"));
+
+    }
+
+}
