@@ -3,6 +3,7 @@ package com.hackerrank.algorithms.game_theory;
 import org.junit.Test;
 
 import static com.hackerrank.algorithms.game_theory.GameTheoryEasy.gameOfStones;
+import static com.hackerrank.algorithms.game_theory.GameTheoryEasy.towerBreakers;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -22,6 +23,20 @@ public class GameTheoryEasyTest {
         assertThat(gameOfStones(9), is("First"));
         assertThat(gameOfStones(10), is("First"));
         assertThat(gameOfStones(11), is("First"));
+
+    }
+
+    @Test
+    public void testTowerBreakers() {
+
+        assertThat(towerBreakers(2,2), is(2));
+        assertThat(towerBreakers(1,4), is(1));
+        assertThat(towerBreakers(2,6), is(2));
+        assertThat(towerBreakers(1,6), is(1));
+        assertThat(towerBreakers(1,14), is(1));
+        assertThat(towerBreakers(2,8), is(2));
+        assertThat(towerBreakers(1,8), is(1));
+        assertThat(towerBreakers(1,1), is(2));
 
     }
 
