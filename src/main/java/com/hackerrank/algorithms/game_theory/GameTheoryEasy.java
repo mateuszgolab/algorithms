@@ -35,4 +35,19 @@ class GameTheoryEasy {
 
     }
 
+    /**
+     *   1 2 3 4 5 6 7 8
+     * 1 L L W W L L W W
+     * 2 L L W W L L W W
+     * 3 W W W W W W W W
+     * 4 W W W W W W W W
+     * 5 L L W W L L W W
+     * 6 L L W W L L W W
+     * 7 W W W W W W W W
+     */
+    static String chessboardGame(int x, int y) {
+        if (((x % 4) == 0 || (x % 4) == 3) || ((y % 4) == 0 || (y % 4) == 3)) return "First";
+        return "Second";
+    }
+
 }
