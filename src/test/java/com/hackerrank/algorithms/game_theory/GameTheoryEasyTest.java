@@ -49,4 +49,17 @@ public class GameTheoryEasyTest {
 
     }
 
+    @Test
+    public void testNimGame1() {
+
+        assertThat(nimGame(new int[]{1,1}), is("Second"));
+        assertThat(nimGame(new int[]{2,1,4}), is("First"));
+        assertThat(nimGame(new int[]{5,5}), is("Second"));
+        assertThat(nimGame(new int[]{5,5,1,7}), is("First"));
+        assertThat(nimGame(new int[]{3,5}), is("First"));
+        assertThat(nimGame(new int[]{1,3,5,7}), is("Second"));
+        assertThat(nimGame(new int[]{2,5}), is("First"));
+
+    }
+
 }

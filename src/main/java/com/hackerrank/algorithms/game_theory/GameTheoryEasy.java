@@ -1,5 +1,6 @@
 package com.hackerrank.algorithms.game_theory;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +37,7 @@ class GameTheoryEasy {
     }
 
     /**
-     *   1 2 3 4 5 6 7 8
+     * 1 2 3 4 5 6 7 8
      * 1 L L W W L L W W
      * 2 L L W W L L W W
      * 3 W W W W W W W W
@@ -48,6 +49,15 @@ class GameTheoryEasy {
     static String chessboardGame(int x, int y) {
         if (((x % 4) == 0 || (x % 4) == 3) || ((y % 4) == 0 || (y % 4) == 3)) return "First";
         return "Second";
+    }
+
+
+    static String nimGame(int[] pile) {
+
+        int xor = Arrays.stream(pile).reduce((a,b) -> a^b).getAsInt();
+        if (xor == 0) return "Second";
+        else return "First";
+
     }
 
 }
