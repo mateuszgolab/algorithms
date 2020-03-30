@@ -54,7 +54,21 @@ class GameTheoryEasy {
 
     static String nimGame(int[] pile) {
 
-        int xor = Arrays.stream(pile).reduce((a,b) -> a^b).getAsInt();
+        int xor = Arrays.stream(pile).reduce((a, b) -> a ^ b).getAsInt();
+        if (xor == 0) return "Second";
+        else return "First";
+
+    }
+
+    static String misereNimGame(int[] pile) {
+
+        int xor = Arrays.stream(pile).reduce((a, b) -> a ^ b).getAsInt();
+        long count1 = Arrays.stream(pile).filter(p -> p == 1).count();
+
+        if (count1 == pile.length) {
+            if (count1 % 2 == 1) return "Second";
+            else return "First";
+        }
         if (xor == 0) return "Second";
         else return "First";
 

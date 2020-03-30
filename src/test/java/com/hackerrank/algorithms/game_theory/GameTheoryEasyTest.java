@@ -62,4 +62,21 @@ public class GameTheoryEasyTest {
 
     }
 
+    @Test
+    public void testMisereNimGame1() {
+
+        assertThat(misereNimGame(new int[]{9,8,4,4,4,7}), is("First"));
+        assertThat(misereNimGame(new int[]{2}), is("First"));
+        assertThat(misereNimGame(new int[]{3}), is("First"));
+        assertThat(misereNimGame(new int[]{4}), is("First"));
+        assertThat(misereNimGame(new int[]{2,1,3}), is("Second"));
+        assertThat(misereNimGame(new int[]{1,1}), is("First"));
+        assertThat(misereNimGame(new int[]{1,1,1}), is("Second"));
+        assertThat(misereNimGame(new int[]{1}), is("Second"));
+
+
+
+
+    }
+
 }
